@@ -31,7 +31,6 @@ h1 {
 
 .clothing-options-container {
   grid-area: clothing;
-  border: 1px solid black;
   padding-left: 5%;
   display: flex;
   flex-direction: column;
@@ -39,7 +38,6 @@ h1 {
 }
 
 .clothing-option {
-  border: 1px solid black;
   height: 20%;
 }
 
@@ -64,7 +62,8 @@ h1 {
   cursor: pointer;
 }
 
-.clothing-option button:hover {
+.clothing-option button:hover,
+.bear-container div button:hover {
   background-color: #485447;
   transform: scale(0.95);
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
@@ -72,4 +71,87 @@ h1 {
 
 h2 {
   color: #8c6c4f;
+}
+
+.bear-container {
+    margin: auto;
+}
+
+.bear-container img {
+  margin-top: -2%;
+}
+
+.bear-container div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* margin-top: 3%; */
+}
+
+.bear-container div input {
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 1em;
+  padding: 2% 0;
+  padding-left: 1%;
+  margin: auto;
+  width: 60%;
+}
+.bear-container div button {
+  background: #5B7F77;
+  color: white;
+  font-family: 'Didact Gothic', sans-serif;
+  width: 30%;
+  margin: auto;
+  margin-top: 3%;
+  font-size: 1.2em;
+  padding: 2% 0;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+
+.saved-outfits-container h2 {
+  text-align: center;
+  margin-top: 5%;
+}
+
+.saved-outfits-container h2 {
+  margin-bottom: 10%;
+}
+.saved-outfits-container div {
+
+  height: 10%;
+  width: 80%;
+  margin: auto;
+  margin-top: 5%;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: space-between;
+  background: #e2bba9;
+  color: white;
+  box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.saved-outfits-container div p {
+  margin-top: 8%;
+  margin-left: 5%;
+
+}
+
+.saved-outfits-container div button {
+  background: #e2bba9;
+  height: 30%;
+  width: 30%;
+  margin-top: 8%;
+  border: 0;
+  padding-left: 5%;
+}
+
+.saved-outfits-container div button img {
+  /* background: #e2bba9; */
+  width: 15%;
+  height: auto;
 }
