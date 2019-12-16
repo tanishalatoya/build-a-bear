@@ -5,5 +5,8 @@ class Outfit {
     this.background = background;
     this.id = id;
   }
-  
+
+  addGarment(attire) {
+    this.garments.push(attire)
+  }
 }
