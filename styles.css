@@ -12,10 +12,11 @@ main {
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-areas: 'clothing bear outfits';
   grid-template-rows: 90vh;
+  background-color: #FCF9EA;
 }
 
 header {
-  background-color: #0C9463;
+  background-color: #5B7F77;
   height: 10vh;
   text-align: center;
   font-size: 2em;
@@ -24,4 +25,51 @@ header {
 h1 {
   font-family: 'Francois One', sans-serif;
   padding-top: .5%;
+  color: #FCF9EA
+}
+
+
+.clothing-options-container {
+  grid-area: clothing;
+  border: 1px solid black;
+  padding-left: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.clothing-option {
+  border: 1px solid black;
+  height: 20%;
+}
+
+.clothing-option div {
+  margin-top: 5%;
+  display: flex;
+
+  flex-wrap: wrap;
+}
+
+.clothing-option button:not(first-child) {
+  font-family: 'Didact Gothic', sans-serif;
+  width: 30%;
+  padding: 2% 0;
+  font-size: 1em;
+  margin: 1.5%;
+  background-color: #5B7F77;
+  color: white;
+  border-radius: 4px;
+  border: 0;
+  box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.clothing-option button:hover {
+  background-color: #485447;
+  transform: scale(0.95);
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  color: #8c6c4f;
 }
