@@ -1,5 +1,6 @@
 var saveButton = document.querySelector('#save-button');
 
+
 window.addEventListener('load', createNewOutfitInstance)
 saveButton.addEventListener('click', saveOutfit)
 
@@ -18,8 +19,12 @@ function createNewOutfitInstance() {
 function saveOutfit() {
   var titleInput = document.querySelector('input');
   // console.log({titleInput})
-  var savedOutfit = new Outfit(titleInput.value, 'background' , 'id' , 'garments')
+  var uniqueId = generateId()
+  var savedOutfit = new Outfit(titleInput.value, 'background' , uniqueId, 'garments')
   //
   console.log({savedOutfit})
+}
 
+function generateId() {
+  return Math.random().toString(36).substr(2, 9);
 }
