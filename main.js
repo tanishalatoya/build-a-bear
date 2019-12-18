@@ -4,6 +4,5 @@
 window.addEventListener('load', createNewOutfitInstance)
 
 function createNewOutfitInstance() {
-
   var outfit = new Outfit('none', 'none', 1);
 }
