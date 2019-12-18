@@ -1,9 +1,17 @@
 var saveButton = document.querySelector('#save-button');
-var backgroundContainer = document.querySelector('.backgrounds')
+var backgroundContainer = document.querySelector('.backgrounds');
+var hatsContainer = document.querySelector('.hats');
+var clothesContainer = document.querySelector('.clothes');
+var accessoriesContainer = document.querySelector('.accessories');
+var allGarments = [];
+
 
 window.addEventListener('load', createNewOutfitInstance)
 saveButton.addEventListener('click', saveOutfit)
 backgroundContainer.addEventListener('click', selectBackground)
+hatsContainer.addEventListener('click', selectHats)
+clothesContainer.addEventListener('click', selectClothes)
+accessoriesContainer.addEventListener('click', selectAccessories)
 
 
 function createNewOutfitInstance() {
@@ -21,7 +29,6 @@ function createNewOutfitInstance() {
 function saveOutfit() {
   var titleInput = document.querySelector('input');
   var background = localStorage.getItem('selectedBackground')
-  console.log(background)
   var uniqueId = generateId()
   var savedOutfit = new Outfit(titleInput.value, background , uniqueId, 'garments')
   console.log({savedOutfit})
@@ -31,12 +38,43 @@ function generateId() {
   return Math.random().toString(36).substr(2, 9);
 }
 
-// click on a button to select a Backgrounds
-// create a place to store the Backgrounds
-// move it from that place back into the saved outfits function
-
 function selectBackground(event) {
   console.log(event)
   var selectedBackground = event.target.id
   localStorage.setItem('selectedBackground', selectedBackground);
+}
+
+// click on garment buttons
+// have that information passed into an array
+// transfer that array into save outfits function
+
+
+function selectHats(event) {
+  var selectedHat = event.target.id
+  if (allGarments[0]) {
+    allGarments[0] = selectedHat
+  } else {
+    allGarments[0] = selectedHat
+  }
+  console.log(allGarments);
+}
+
+function selectClothes(event) {
+  var selectedClothes = event.target.id
+  if (allGarments[1]) {
+    allGarments[1] = selectedClothes
+  } else {
+    allGarments[1] = selectedClothes
+  }
+  console.log(allGarments);
+}
+
+function selectAccessories(event) {
+  var selectedAccessories = event.target.id
+  if (allGarments[2]) {
+    allGarments[2] = selectedAccessories
+  } else {
+    allGarments[2] = selectedAccessories
+  }
+  console.log(allGarments);
 }
