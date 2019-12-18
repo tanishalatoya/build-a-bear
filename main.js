@@ -1,9 +1,9 @@
-var saveButton = document.querySelector('#save-button')
+//when the page loads, a new naked bear to show up --> event listener on window
+//needs to be new instance of the object
 
-saveButton.addEventListener('click', saveOutfit)
+window.addEventListener('load', createNewOutfitInstance)
 
-function saveOutfit() {
-  var outfitInput = document.querySelector('input');
-  var outfit = new Outfit(outfitInput.value)
-  console.log(outfit);
+function createNewOutfitInstance() {
+
+  var outfit = new Outfit('none', 'none', 1);
 }
