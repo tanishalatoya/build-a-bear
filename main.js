@@ -10,6 +10,16 @@ function createNewOutfitInstance() {
 // add event listener to the save button
 // create an new instance on click of save button
 // in new instance generate title, background, id, update garments
+// create a variable that will pull in the title from the input
+// create another variable thats going to hold onto the background that user selects
+// create a function that generates a unique id
+// variable thats going to hold on to the selected garments that is an array
+
 function saveOutfit() {
-  var savedOutfit = new Outfit(title, background, id, garments)
+  var titleInput = document.querySelector('input');
+  // console.log({titleInput})
+  var savedOutfit = new Outfit(titleInput.value, 'background' , 'id' , 'garments')
+  //
+  console.log({savedOutfit})
+
 }
