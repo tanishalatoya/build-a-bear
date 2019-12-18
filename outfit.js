@@ -1,9 +1,9 @@
 class Outfit {
   constructor(title, background, id) {
-    this.title = title;
+    this.title = title || 'no';
     this.garments = [];
     this.background = background || 'none';
-    this.id = id || 'anything';
+    this.id = id || undefined;
   }
 
   addGarment(attire) {
