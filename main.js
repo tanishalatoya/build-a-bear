@@ -20,10 +20,11 @@ function createNewOutfitInstance() {
 
 function saveOutfit() {
   var titleInput = document.querySelector('input');
-  // console.log({titleInput})
+  var background = localStorage.getItem('selectedBackground')
+  console.log(background)
   var uniqueId = generateId()
-  var savedOutfit = new Outfit(titleInput.value, 'background' , uniqueId, 'garments')
-  // console.log({savedOutfit})
+  var savedOutfit = new Outfit(titleInput.value, background , uniqueId, 'garments')
+  console.log({savedOutfit})
 }
 
 function generateId() {
@@ -36,6 +37,6 @@ function generateId() {
 
 function selectBackground(event) {
   console.log(event)
-  var userBackground = event.target.id
-  console.log(userBackground)
+  var selectedBackground = event.target.id
+  localStorage.setItem('selectedBackground', selectedBackground);
 }
