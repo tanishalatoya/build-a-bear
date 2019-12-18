@@ -1,8 +1,10 @@
 var saveButton = document.querySelector('#save-button');
-
+var backgroundContainer = document.querySelector('.backgrounds')
 
 window.addEventListener('load', createNewOutfitInstance)
 saveButton.addEventListener('click', saveOutfit)
+backgroundContainer.addEventListener('click', selectBackground)
+
 
 function createNewOutfitInstance() {
   var outfit = new Outfit('none', 'none', 1);
@@ -21,10 +23,19 @@ function saveOutfit() {
   // console.log({titleInput})
   var uniqueId = generateId()
   var savedOutfit = new Outfit(titleInput.value, 'background' , uniqueId, 'garments')
-  //
-  console.log({savedOutfit})
+  // console.log({savedOutfit})
 }
 
 function generateId() {
   return Math.random().toString(36).substr(2, 9);
+}
+
+// click on a button to select a Backgrounds
+// create a place to store the Backgrounds
+// move it from that place back into the saved outfits function
+
+function selectBackground(event) {
+  console.log(event)
+  var userBackground = event.target.id
+  console.log(userBackground)
 }
