@@ -1,7 +1,7 @@
 class Outfit {
   constructor(title, background, id, garments) {
     this.title = title || 'no';
-    this.garments = [];
+    this.garments = garments || [];
     this.background = background || 'none';
     this.id = id || undefined;
   }
