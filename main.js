@@ -1,37 +1,26 @@
 var saveButton = document.querySelector('#save-button');
 var backgroundContainer = document.querySelector('.backgrounds');
-var hatsContainer = document.querySelector('.hats');
-var clothesContainer = document.querySelector('.clothes');
-var accessoriesContainer = document.querySelector('.accessories');
+var allClothingOptions = document.querySelector('.all-clothing-options');
 var allGarments = [];
 
 
 window.addEventListener('load', createNewOutfitInstance)
 saveButton.addEventListener('click', saveOutfit)
 backgroundContainer.addEventListener('click', selectBackground)
-hatsContainer.addEventListener('click', selectHats)
-clothesContainer.addEventListener('click', selectClothes)
-accessoriesContainer.addEventListener('click', selectAccessories)
+allClothingOptions.addEventListener('click', selectGarment)
+
 
 
 function createNewOutfitInstance() {
   var outfit = new Outfit('none', 'none', 1);
 }
 
-// add event listener to the save button
-// create an new instance on click of save button
-// in new instance generate title, background, id, update garments
-// create a variable that will pull in the title from the input
-// create another variable thats going to hold onto the background that user selects
-// create a function that generates a unique id
-// variable thats going to hold on to the selected garments that is an array
-
 function saveOutfit() {
   var titleInput = document.querySelector('input');
   var background = localStorage.getItem('selectedBackground')
   var uniqueId = generateId()
-  var savedOutfit = new Outfit(titleInput.value, background , uniqueId, 'garments')
-  console.log({savedOutfit})
+  var garments = JSON.parse(localStorage.getItem('selectGarments'));
+  var savedOutfit = new Outfit(titleInput.value, background , uniqueId, garments)
 }
 
 function generateId() {
@@ -39,42 +28,31 @@ function generateId() {
 }
 
 function selectBackground(event) {
-  console.log(event)
   var selectedBackground = event.target.id
   localStorage.setItem('selectedBackground', selectedBackground);
 }
 
-// click on garment buttons
-// have that information passed into an array
-// transfer that array into save outfits function
+function selectGarment(event) {
+  var hatButtons = document.querySelectorAll('.hats');
+  var clothesButtons = document.querySelectorAll('.clothes')
+  var accessoriesButtons = document.querySelectorAll('.accessories')
 
-
-function selectHats(event) {
-  var selectedHat = event.target.id
-  if (allGarments[0]) {
-    allGarments[0] = selectedHat
-  } else {
-    allGarments[0] = selectedHat
+  for (var i = 0; i < hatButtons.length; i++) {
+    if (event.target.parentElement.className === 'hats') {
+      allGarments[0] = event.target.id
+    }
   }
-  console.log(allGarments);
-}
-
-function selectClothes(event) {
-  var selectedClothes = event.target.id
-  if (allGarments[1]) {
-    allGarments[1] = selectedClothes
-  } else {
-    allGarments[1] = selectedClothes
+  for (var i = 0; i < clothesButtons.length; i++) {
+    if (event.target.parentElement.className === 'clothes') {
+      allGarments[1] = event.target.id
+    }
   }
-  console.log(allGarments);
-}
-
-function selectAccessories(event) {
-  var selectedAccessories = event.target.id
-  if (allGarments[2]) {
-    allGarments[2] = selectedAccessories
-  } else {
-    allGarments[2] = selectedAccessories
+  for (var i = 0; i < accessoriesButtons.length; i++) {
+    if (event.target.parentElement.className === 'accessories') {
+      allGarments[2] = event.target.id
+    }
   }
-  console.log(allGarments);
+
+  var stringifiedGarments = JSON.stringify(allGarments)
+  localStorage.setItem('selectGarments', stringifiedGarments);
 }

@@ -38,7 +38,7 @@ h1 {
 }
 
 .clothing-option {
-  height: 20%;
+  height: 30%;
 }
 
 .clothing-option div {
@@ -151,7 +151,11 @@ h2 {
 }
 
 .saved-outfits-container div button img {
-  /* background: #e2bba9; */
   width: 15%;
   height: auto;
+}
+
+.all-clothing-options {
+  height: 80%;
+  padding-top: 5%;
 }
