@@ -1,17 +1,17 @@
 var saveButton = document.querySelector('#save-button');
 var backgroundContainer = document.querySelector('.backgrounds');
-var hatsContainer = document.querySelector('.hats');
-var clothesContainer = document.querySelector('.clothes');
-var accessoriesContainer = document.querySelector('.accessories');
+var allClothingOptions = document.querySelector('.all-clothing-options');
+// var clothesContainer = document.querySelector('.clothes');
+// var accessoriesContainer = document.querySelector('.accessories');
 var allGarments = [];
 
 
 window.addEventListener('load', createNewOutfitInstance)
 saveButton.addEventListener('click', saveOutfit)
 backgroundContainer.addEventListener('click', selectBackground)
-hatsContainer.addEventListener('click', selectHats)
-clothesContainer.addEventListener('click', selectClothes)
-accessoriesContainer.addEventListener('click', selectAccessories)
+allClothingOptions.addEventListener('click', selectGarment)
+// clothesContainer.addEventListener('click', selectClothes)
+// accessoriesContainer.addEventListener('click', selectAccessories)
 
 
 function createNewOutfitInstance() {
@@ -49,32 +49,43 @@ function selectBackground(event) {
 // transfer that array into save outfits function
 
 
-function selectHats(event) {
-  var selectedHat = event.target.id
-  if (allGarments[0]) {
-    allGarments[0] = selectedHat
-  } else {
-    allGarments[0] = selectedHat
-  }
-  console.log(allGarments);
-}
+// function selectHats(event) {
+//   var selectedHat = event.target.id
+//   if (allGarments[0]) {
+//     allGarments[0] = selectedHat
+//   } else {
+//     allGarments[0] = selectedHat
+//   }
+//   console.log(allGarments);
+// }
+//
+// function selectClothes(event) {
+//   var selectedClothes = event.target.id
+//   if (allGarments[1]) {
+//     allGarments[1] = selectedClothes
+//   } else {
+//     allGarments[1] = selectedClothes
+//   }
+//   console.log(allGarments);
+// }
+//
+// function selectAccessories(event) {
+//   var selectedAccessories = event.target.id
+//   if (allGarments[2]) {
+//     allGarments[2] = selectedAccessories
+//   } else {
+//     allGarments[2] = selectedAccessories
+//   }
+//   console.log(allGarments);
+// }
 
-function selectClothes(event) {
-  var selectedClothes = event.target.id
-  if (allGarments[1]) {
-    allGarments[1] = selectedClothes
-  } else {
-    allGarments[1] = selectedClothes
+function selectGarment(event) {
+  console.log(event);
+  var hatButtons = document.querySelectorAll('.hats');
+  for (var i = 0; i < hatButtons.length; i++) {
+    if (event.target.parentElement.className === 'hats') {
+      allGarments[0] = event.target.id
+    }
   }
-  console.log(allGarments);
-}
-
-function selectAccessories(event) {
-  var selectedAccessories = event.target.id
-  if (allGarments[2]) {
-    allGarments[2] = selectedAccessories
-  } else {
-    allGarments[2] = selectedAccessories
-  }
-  console.log(allGarments);
+  console.log({allGarments});
 }
