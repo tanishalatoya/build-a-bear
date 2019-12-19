@@ -44,11 +44,10 @@ h1 {
 .clothing-option div {
   margin-top: 5%;
   display: flex;
-
   flex-wrap: wrap;
 }
 
-.clothing-option button:not(first-child) {
+button:not(first-child) {
   font-family: 'Didact Gothic', sans-serif;
   width: 30%;
   padding: 2% 0;
@@ -143,16 +142,19 @@ h2 {
 
 .saved-outfits-container div button {
   background: #e2bba9;
-  height: 30%;
-  width: 30%;
-  margin-top: 8%;
+  height: 50%;
+  width: 20%;
+  margin-top: 5%;
   border: 0;
   padding-left: 5%;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+
 }
 
 .saved-outfits-container div button img {
-  width: 15%;
+  width: 40%;
   height: auto;
+  margin-top: -10%;
 }
 
 .all-clothing-options {
@@ -160,16 +162,12 @@ h2 {
   padding-top: 5%;
 }
 
-.all-images {
-  border: 1px solid black;
-}
-
 .hidden {
   display: none;
 }
 
 .button-clicked {
-  background-color: #485447;
-  transform: scale(0.95);
-  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+  background-color: #485447 !important;
+  transform: scale(0.95) !important;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3) !important;
 }
