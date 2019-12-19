@@ -82,9 +82,22 @@ function selectBackground(event) {
 function selectGarment(event) {
   console.log(event);
   var hatButtons = document.querySelectorAll('.hats');
+  var clothesButtons = document.querySelectorAll('.clothes')
+  var accessoriesButtons = document.querySelectorAll('.accessories')
+
   for (var i = 0; i < hatButtons.length; i++) {
     if (event.target.parentElement.className === 'hats') {
       allGarments[0] = event.target.id
+    }
+  }
+  for (var i = 0; i < clothesButtons.length; i++) {
+    if (event.target.parentElement.className === 'clothes') {
+      allGarments[1] = event.target.id
+    }
+  }
+  for (var i = 0; i < accessoriesButtons.length; i++) {
+    if (event.target.parentElement.className === 'accessories') {
+      allGarments[2] = event.target.id
     }
   }
   console.log({allGarments});
