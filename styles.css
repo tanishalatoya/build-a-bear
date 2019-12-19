@@ -159,3 +159,17 @@ h2 {
   height: 80%;
   padding-top: 5%;
 }
+
+.all-images {
+  border: 1px solid black;
+}
+
+.hidden {
+  display: none;
+}
+
+.button-clicked {
+  background-color: #485447;
+  transform: scale(0.95);
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+}
