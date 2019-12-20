@@ -2,7 +2,7 @@ var saveButton = document.querySelector('#save-button');
 var backgroundContainer = document.querySelector('.backgrounds');
 var allClothingOptions = document.querySelector('.all-clothing-options');
 var allGarments = [];
-var allClothingOptionsButtons = document.querySelector('.all-clothing-options > button');
+
 
 window.addEventListener('load', createNewOutfitInstance);
 saveButton.addEventListener('click', saveOutfit);
@@ -55,14 +55,6 @@ function selectGarment(event) {
   var stringifiedGarments = JSON.stringify(allGarments)
   localStorage.setItem('selectGarments', stringifiedGarments);
 }
-
-// when garment button is clicked button will change color and stay that way
-// matching garment should appear on the page
-
-
-
-
-
 
 function clickedGarmentButtons() {
   var buttons = document.querySelectorAll('button');
