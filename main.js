@@ -61,7 +61,7 @@ function clickedGarmentButtons() {
   for (var i = 0; i < buttons.length; i++)  {
     if (buttons[i] === event.target) {
       console.log('yes');
-      event.target.classList.toggle('button-clicked');
+      event.target.classList.toggleAdd functionality('button-clicked');
     }
   }
   // console.log(buttons);

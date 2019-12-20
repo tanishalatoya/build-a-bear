@@ -237,39 +237,3 @@ h2 {
   margin-top: -2%;
   height: 500px;
 }
-
-#beach-background,
-#hearts-background,
-#space-background,
-#park-background {
-  height: 35.5em;
-  width: 40em;
-  margin-top: -100%;
-  margin-bottom: 3%;
-  margin-left: 8%;
-  position: relative;
-  z-index: 1;
-}
-
-#clothing-vest {
-  margin-top: -100%;
-  margin-bottom: 2%;
-}
-
-#clothing-bowtie {
-  height: 5em;
-  width: auto;
-  margin-left: 32%;
-  margin-top: -100%;
-  margin-bottom: 42%;
-  transform: rotate(15deg);
-}
-
-#clothing-dress {
-  height: 35em;
-  width: auto;
-  margin-top: -100%;
-  margin-bottom: 5%;
-  margin-left: 2%;
-  transform: skewX(10deg);
-}
