@@ -11,7 +11,7 @@ main {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-areas: 'clothing bear outfits';
-  grid-template-rows: 100vh;
+  grid-template-rows: 90vh;
   background-color: #FCF9EA;
 }
 
@@ -74,12 +74,6 @@ h2 {
 
 .bear-container {
     margin: auto;
-}
-
-.bear-container img {
-  margin-top: -2%;
-  position: relative;
-  z-index: 10;
 }
 
 .bear-container div {
@@ -172,6 +166,76 @@ h2 {
   background-color: #485447 !important;
   transform: scale(0.95) !important;
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3) !important;
+}
+
+.all-images {
+  position: relative;
+}
+
+#crown-img {
+  position: absolute;
+  width: 20%;
+  right: 30%;
+  transform: rotate(20deg);
+}
+
+#hairbow-img {
+  position: absolute;
+  width: 20%;
+  right: 35%;
+  top: 4%;
+  transform: rotate(20deg);
+}
+
+#necklace-img {
+  position: absolute;
+  width: 20%;
+  right: 42%;
+  top: 42%;
+  transform: rotate(10deg);
+}
+
+#smartwatch-img {
+  position: absolute;
+  width: 10%;
+  right: 72%;
+  top: 35%;
+  transform: rotate(60deg);
+}
+
+#spacehelmet-img {
+  position: absolute;
+  width: 42%;
+  right: 24.5%;
+  transform: rotate(14deg);
+}
+
+#sunglasses-img {
+  position: absolute;
+  width: 31%;
+  right: 31.5%;
+  top: 20%;
+  transform: rotate(18deg);
+}
+
+#sunhat-img {
+  position: absolute;
+  width: 40%;
+  right: 23%;
+  bottom: 70%;
+}
+
+#tophat-img {
+  position: absolute;
+  width: 34%;
+  right: 27%;
+  bottom: 85%;
+  transform: rotate(15deg);
+}
+
+#bear-img {
+  margin-top: -2%;
+  height: 500px;
 }
 
 #beach-background,
