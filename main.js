@@ -58,9 +58,6 @@ function selectGarment(event) {
   localStorage.setItem('selectGarments', stringifiedGarments);
 }
 
-// when garment button is clicked button will change color and stay that way
-// matching garment should appear on the page
-
 function clickedGarmentButtons() {
   var buttons = document.querySelectorAll('button');
   for (var i = 0; i < buttons.length; i++) {
