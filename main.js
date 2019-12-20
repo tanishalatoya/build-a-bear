@@ -80,3 +80,17 @@ function dressBear() {
   allGarments.classList.remove('hidden');
 
 }
+
+function addHatGarments() {
+  var allHats = docment.querySelectorAll('.hats > button');
+  var accessoriesImages = document.querySelectorAll('.accessories-images');
+
+  for (var i = 0; i < accessoriesImages.length; i++) {
+    if (event.target !== accessoriesImages[i]) {
+      !accessoriesImages[i].classList.add('hidden')
+    } else {
+      accessoriesImages[i].classList.toggle('hidden');
+    }
+  }
+
+}
