@@ -177,6 +177,7 @@ h2 {
   width: 20%;
   right: 30%;
   transform: rotate(20deg);
+  z-index: 3;
 }
 
 #hairbow-img {
@@ -185,6 +186,7 @@ h2 {
   right: 35%;
   top: 4%;
   transform: rotate(20deg);
+  z-index: 3;
 }
 
 #necklace-img {
@@ -193,6 +195,7 @@ h2 {
   right: 42%;
   top: 42%;
   transform: rotate(10deg);
+  z-index: 3;
 }
 
 #smartwatch-img {
@@ -201,6 +204,7 @@ h2 {
   right: 72%;
   top: 35%;
   transform: rotate(60deg);
+  z-index: 3;
 }
 
 #spacehelmet-img {
@@ -208,6 +212,7 @@ h2 {
   width: 42%;
   right: 24.5%;
   transform: rotate(14deg);
+  z-index: 3;
 }
 
 #sunglasses-img {
@@ -216,6 +221,7 @@ h2 {
   right: 31.5%;
   top: 20%;
   transform: rotate(18deg);
+  z-index: 3;
 }
 
 #sunhat-img {
@@ -223,6 +229,7 @@ h2 {
   width: 40%;
   right: 23%;
   bottom: 70%;
+  z-index: 3;
 }
 
 #tophat-img {
@@ -231,9 +238,52 @@ h2 {
   right: 27%;
   bottom: 85%;
   transform: rotate(15deg);
+  z-index: 3;
 }
 
 #bear-img {
   margin-top: -2%;
   height: 500px;
+  position: relative;
+  z-index: 2;
+}
+
+#beach-background,
+#hearts-background,
+#space-background,
+#park-background {
+  height:40em;
+  width: 40em;
+  margin-top: -66%;
+  margin-bottom: 3%;
+  margin-left: 5.5%;
+  position: relative;
+  z-index: 1;
+}
+
+#clothing-vest {
+  margin-top: -100%;
+  margin-bottom: 2%;
+}
+
+#clothing-bowtie {
+  height: 5em;
+  width: auto;
+  margin-left: 30%;
+  margin-top: -100%;
+  margin-bottom: 39%;
+  transform: rotate(15deg);
+  position: relative;
+  z-index: 3;
+}
+
+#clothing-dress {
+  height: 30em;
+  width: auto;
+  margin-top: -100%;
+  margin-left: 2%;
+  margin-bottom: 4%;
+  transform: skewX(10deg);
+  position: relative;
+  z-index: 3;
 }
