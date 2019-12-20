@@ -2,13 +2,15 @@ var saveButton = document.querySelector('#save-button');
 var backgroundContainer = document.querySelector('.backgrounds');
 var allClothingOptions = document.querySelector('.all-clothing-options');
 var allGarments = [];
-var allClothingOptionsButtons = document.querySelector('.all-clothing-options > button');
+var allImages = document.querySelectorAll('img')
 
 window.addEventListener('load', createNewOutfitInstance);
 saveButton.addEventListener('click', saveOutfit);
 backgroundContainer.addEventListener('click', selectBackground);
 allClothingOptions.addEventListener('click', selectGarment);
 allClothingOptions.addEventListener('click', clickedGarmentButtons);
+allClothingOptions.addEventListener('click', dressBear);
+
 
 function createNewOutfitInstance() {
   var outfit = new Outfit('none', 'none', 1);
@@ -59,18 +61,25 @@ function selectGarment(event) {
 // when garment button is clicked button will change color and stay that way
 // matching garment should appear on the page
 
-
-
-
-
-
 function clickedGarmentButtons() {
   var buttons = document.querySelectorAll('button');
-  for (var i = 0; i < buttons.length; i++)  {
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].classList.remove('button-clicked');
     if (buttons[i] === event.target) {
-      console.log('yes');
-      event.target.classList.toggleAdd functionality('button-clicked');
+    event.target.classList.toggle('button-clicked');
+
+      // event.target.classList.toggle('hidden');
     }
   }
-  // console.log(buttons);
+}
+
+// write a function that says if this image with a classlist of X matches this button with a classlist of X display button.
+
+function dressBear() {
+  var allGarments = document.querySelector(`#${event.target.dataset.id}`);
+  for (var i = 1; i < allImages.length; i++) {
+    allImages[i].classList.add('hidden')
+  }
+  allGarments.classList.remove('hidden');
+
 }
