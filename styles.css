@@ -11,7 +11,7 @@ main {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-areas: 'clothing bear outfits';
-  grid-template-rows: 90vh;
+  grid-template-rows: auto;
   background-color: #FCF9EA;
 }
 
@@ -78,6 +78,8 @@ h2 {
 
 .bear-container img {
   margin-top: -2%;
+  position: relative;
+  z-index: 10;
 }
 
 .bear-container div {
@@ -170,4 +172,17 @@ h2 {
   background-color: #485447 !important;
   transform: scale(0.95) !important;
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3) !important;
+}
+
+#beach-background,
+#hearts-background,
+#space-background,
+#park-background {
+  height: 35.5em;
+  width: 40em;
+  margin-top: -100%;
+  margin-bottom: 3%;
+  margin-left: 8%;
+  position: relative;
+  z-index: 1;
 }
