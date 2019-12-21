@@ -2,10 +2,8 @@ var saveButton = document.querySelector('#save-button');
 var backgroundContainer = document.querySelector('.backgrounds');
 var allClothingOptions = document.querySelector('.all-clothing-options');
 var allGarments = [];
-// var allImages = document.querySelectorAll('img')
 var hatContainer = document.querySelector('.hats');
 
-var accessoriesImages = document.querySelectorAll('.accessories-img');
 var accessoriesContainer = document.querySelector('.accessories');
 
 window.addEventListener('load', createNewOutfitInstance);
@@ -15,6 +13,7 @@ allClothingOptions.addEventListener('click', selectGarment);
 allClothingOptions.addEventListener('click', clickedGarmentButtons);
 // allClothingOptions.addEventListener('click', dressBear);
 hatContainer.addEventListener('click', addHatGarments);
+accessoriesContainer.addEventListener('click', addAccessoriesGarments);
 
 
 function createNewOutfitInstance() {
@@ -82,5 +81,16 @@ function addHatGarments() {
   for (var i = 0; i < hatImages.length; i++) {
     hatImages[i].classList.add('hidden');
     allHats.classList.remove('hidden');
+  }
+}
+
+
+function addAccessoriesGarments() {
+  var allAccessories = document.querySelector(`#${event.target.dataset.id}`);
+  var accessoriesImages = document.querySelectorAll('.accessories-img');
+
+  for (var i = 0; i < accessoriesImages.length; i++) {
+    accessoriesImages[i].classList.add('hidden');
+    allAccessories.classList.remove('hidden');
   }
 }
