@@ -2,14 +2,18 @@ var saveButton = document.querySelector('#save-button');
 var backgroundContainer = document.querySelector('.backgrounds');
 var allClothingOptions = document.querySelector('.all-clothing-options');
 var allGarments = [];
-var allImages = document.querySelectorAll('img')
+var hatContainer = document.querySelector('.hats');
+
+var accessoriesContainer = document.querySelector('.accessories');
 
 window.addEventListener('load', createNewOutfitInstance);
 saveButton.addEventListener('click', saveOutfit);
 backgroundContainer.addEventListener('click', selectBackground);
 allClothingOptions.addEventListener('click', selectGarment);
 allClothingOptions.addEventListener('click', clickedGarmentButtons);
-allClothingOptions.addEventListener('click', dressBear);
+// allClothingOptions.addEventListener('click', dressBear);
+hatContainer.addEventListener('click', addHatGarments);
+accessoriesContainer.addEventListener('click', addAccessoriesGarments);
 
 
 function createNewOutfitInstance() {
@@ -70,13 +74,23 @@ function clickedGarmentButtons() {
   }
 }
 
-// write a function that says if this image with a classlist of X matches this button with a classlist of X display button.
+function addHatGarments() {
+  var allHats = document.querySelector(`#${event.target.dataset.id}`);
+  var hatImages = document.querySelectorAll('.hat-img')
 
-function dressBear() {
-  var allGarments = document.querySelector(`#${event.target.dataset.id}`);
-  for (var i = 1; i < allImages.length; i++) {
-    allImages[i].classList.add('hidden')
+  for (var i = 0; i < hatImages.length; i++) {
+    hatImages[i].classList.add('hidden');
+    allHats.classList.remove('hidden');
   }
-  allGarments.classList.remove('hidden');
+}
 
+
+function addAccessoriesGarments() {
+  var allAccessories = document.querySelector(`#${event.target.dataset.id}`);
+  var accessoriesImages = document.querySelectorAll('.accessories-img');
+
+  for (var i = 0; i < accessoriesImages.length; i++) {
+    accessoriesImages[i].classList.add('hidden');
+    allAccessories.classList.remove('hidden');
+  }
 }
