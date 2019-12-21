@@ -77,11 +77,16 @@ function clickedGarmentButtons() {
 function addHatGarments() {
   var allHats = document.querySelector(`#${event.target.dataset.id}`);
   var hatImages = document.querySelectorAll('.hat-img')
-
+  console.log(event.target.dataset.id, event.target.id);
   for (var i = 0; i < hatImages.length; i++) {
-    hatImages[i].classList.add('hidden');
-    allHats.classList.remove('hidden');
+    if (event.target === hatImages[i]) {
+      hatImages[i].classList.add('hidden');
+      console.log(hatImages[0], hatImages[1], hatImages[2], hatImages[3]);
+    } else {
+      allHats.classList.remove('hidden');
+    }
   }
+
 }
 
 
