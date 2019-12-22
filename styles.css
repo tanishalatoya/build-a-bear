@@ -252,38 +252,64 @@ h2 {
 #hearts-background,
 #space-background,
 #park-background {
-  height:40em;
+  height: 30em;
+  position: absolute;
+  left: 2%;
+  z-index: 1;
+
+  /* height:40em;
   width: 40em;
   margin-top: -66%;
   margin-bottom: 3%;
   margin-left: 5.5%;
   position: relative;
-  z-index: 1;
+  z-index: 1; */
 }
 
 #clothing-vest {
-  margin-top: -100%;
-  margin-bottom: 2%;
+  height: 29em;
+  right: 5%;
+  top: 2%;
+  transform: rotate(deg);
+  position: absolute;
+  z-index: 3;
+
+  /* margin-top: -100%;
+  margin-bottom: 2%; */
 }
 
 #clothing-bowtie {
   height: 5em;
+  top: 38%;
+  right: 40%;
+  transform: rotate(15deg);
+  position: absolute;
+  z-index: 3;
+
+  /* height: 5em;
   width: auto;
   margin-left: 30%;
   margin-top: -100%;
   margin-bottom: 39%;
   transform: rotate(15deg);
   position: relative;
-  z-index: 3;
+  z-index: 3; */
 }
 
 #clothing-dress {
-  height: 30em;
+  height: 26em;
+  right: 11%;
+  top: 7%;
+  transform: rotate(5deg);
+  position: absolute;
+  z-index: 3;
+
+  /* height: 30em;
   width: auto;
   margin-top: -100%;
   margin-left: 2%;
   margin-bottom: 4%;
   transform: skewX(10deg);
-  position: relative;
-  z-index: 3;
+  position: absolute;
+  z-index: 3; */
 }
