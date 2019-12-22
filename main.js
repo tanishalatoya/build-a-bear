@@ -86,7 +86,6 @@ function addHatGarments() {
       allHats.classList.remove('hidden');
     }
   }
-
 }
 
 
