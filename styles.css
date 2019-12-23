@@ -62,7 +62,8 @@ button:not(first-child) {
 }
 
 .clothing-option button:hover,
-.bear-container div button:hover {
+.save-button-test:hover
+ {
   background-color: #485447;
   transform: scale(0.95);
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
@@ -144,8 +145,9 @@ h2 {
   border: 0;
   padding-left: 5%;
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
-
 }
+
+
 
 .saved-outfits-container div button img {
   width: 40%;
@@ -166,6 +168,11 @@ h2 {
   background-color: #485447 !important;
   transform: scale(0.95) !important;
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3) !important;
+}
+
+#save-button {
+  background: #9CB2AD;
+  cursor: not-allowed;
 }
 
 .all-images {

@@ -10,6 +10,8 @@ var clothesImages = document.querySelectorAll('.clothes-img');
 var clothesContainer = document.querySelector('.clothes');
 var backgroundImages = document.querySelectorAll('.background-img');
 var backgroundsContainer = document.querySelector('.backgrounds');
+var titleInput = document.querySelector('input');
+
 
 window.addEventListener('load', createNewOutfitInstance);
 saveButton.addEventListener('click', saveOutfit);
@@ -24,33 +26,53 @@ clothesContainer.addEventListener('click', toggleClothes);
 backgroundsContainer.addEventListener('click', clickedBackgroundsButtons);
 backgroundsContainer.addEventListener('click', toggleBackgrounds);
 saveButton.addEventListener('click', createSavedOutfitCard);
+titleInput.addEventListener('input', toggleSaveBtn);
 
 
 
 function createNewOutfitInstance() {
   var outfit = new Outfit('none', 'none', 1);
+  toggleSaveBtn()
 }
 
 function saveOutfit() {
-  var titleInput = document.querySelector('input');
   var background = localStorage.getItem('selectedBackground')
   var uniqueId = generateId()
   var garments = JSON.parse(localStorage.getItem('selectGarments'));
   var savedOutfit = new Outfit(titleInput.value, background , uniqueId, garments)
-
+  // enableSaveBtn()
   return savedOutfit;
 }
 
 function createSavedOutfitCard(outfitInfo) {
   var savedOutfitsContainer = document.querySelector('.saved-outfits-container');
   var outfitInfo = saveOutfit();
-
   savedOutfitsContainer.innerHTML +=
     `<div>
       <p>${outfitInfo.title}</p>
       <button id=${outfitInfo.id}type="button" name="button"><img src="./assets/cancel.svg" alt="close icon"></button>
     </div>`
+  console.log(outfitInfo);
+  saveButton.disabled = true;
+  titleInput.value = "";
+  saveButton.setAttribute("id", "save-button")
 }
+
+function toggleSaveBtn() {
+  console.log('anything');
+  if (!titleInput.value || titleInput.value === "Name this outfit") {
+    saveButton.disabled = true;
+
+  } else {
+    saveButton.disabled = false;
+    saveButton.removeAttribute("id")
+  }
+}
+
+// function enableSaveBtn() {
+//   saveButton.disabled = false;
+//   saveButton.classList.add('save-button-test');
+// }
 
 function generateId() {
   return Math.random().toString(36).substr(2, 9);
