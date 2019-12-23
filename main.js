@@ -2,6 +2,7 @@ var saveButton = document.querySelector('#save-button');
 var backgroundContainer = document.querySelector('.backgrounds');
 var allClothingOptions = document.querySelector('.all-clothing-options');
 var allGarments = [];
+var hatImages = document.querySelectorAll('.hat-img');
 var hatContainer = document.querySelector('.hats');
 
 var accessoriesContainer = document.querySelector('.accessories');
@@ -12,7 +13,7 @@ backgroundContainer.addEventListener('click', selectBackground);
 allClothingOptions.addEventListener('click', selectGarment);
 allClothingOptions.addEventListener('click', clickedGarmentButtons);
 // allClothingOptions.addEventListener('click', dressBear);
-hatContainer.addEventListener('click', addHatGarments);
+hatContainer.addEventListener('click', toggleHats);
 accessoriesContainer.addEventListener('click', addAccessoriesGarments);
 
 
@@ -75,17 +76,35 @@ function clickedGarmentButtons() {
 }
 
 function addHatGarments() {
+  removeHats()
   var allHats = document.querySelector(`#${event.target.dataset.id}`);
-  var hatImages = document.querySelectorAll('.hat-img')
-  console.log(event.target.dataset.id, event.target.id);
+  allHats.classList.toggle('hidden');
+  event.target.dataset.active = 'true';
+}
+
+function removeHats() {
   for (var i = 0; i < hatImages.length; i++) {
-    if (event.target === hatImages[i]) {
-      hatImages[i].classList.add('hidden');
-      console.log(hatImages[0], hatImages[1], hatImages[2], hatImages[3]);
-    } else {
-      allHats.classList.remove('hidden');
-    }
+    hatImages[i].classList.add('hidden');
+    hatImages[i].classList.add('false');
   }
+}
+
+function toggleHats() {
+  if (event.target.dataset.active === 'true') {
+    removeHats()
+    event.target.dataset.active = 'false'
+  } else {
+    removeHats()
+    addHatGarments();
+  }
+}
+
+function addAccessoriesGarments() {
+    var allAccessories = document.querySelector(`#${event.target.dataset.id}`);
+    for (var i = 0; i < accessoriesImages.length; i++) {
+      accessoriesImages[i].classList.add('hidden')
+      allAccessories.classList.remove('hidden');
+    }
 }
 
 
@@ -94,7 +113,7 @@ function addAccessoriesGarments() {
   var accessoriesImages = document.querySelectorAll('.accessories-img');
 
   for (var i = 0; i < accessoriesImages.length; i++) {
-    accessoriesImages[i].classList.add('hidden');
-    allAccessories.classList.remove('hidden');
+    accessoriesImages[i].classList.toggle('hidden');
+    allAccessories.classList.toggle('hidden');
   }
 }
