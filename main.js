@@ -10,6 +10,8 @@ var clothesImages = document.querySelectorAll('.clothes-img');
 var clothesContainer = document.querySelector('.clothes');
 var backgroundImages = document.querySelectorAll('.background-img');
 var backgroundsContainer = document.querySelector('.backgrounds');
+var titleInput = document.querySelector('input');
+
 
 window.addEventListener('load', createNewOutfitInstance);
 saveButton.addEventListener('click', saveOutfit);
@@ -32,7 +34,6 @@ function createNewOutfitInstance() {
 }
 
 function saveOutfit() {
-  var titleInput = document.querySelector('input');
   var background = localStorage.getItem('selectedBackground')
   var uniqueId = generateId()
   var garments = JSON.parse(localStorage.getItem('selectGarments'));
@@ -44,12 +45,12 @@ function saveOutfit() {
 function createSavedOutfitCard(outfitInfo) {
   var savedOutfitsContainer = document.querySelector('.saved-outfits-container');
   var outfitInfo = saveOutfit();
-
   savedOutfitsContainer.innerHTML +=
     `<div>
       <p>${outfitInfo.title}</p>
       <button id=${outfitInfo.id}type="button" name="button"><img src="./assets/cancel.svg" alt="close icon"></button>
     </div>`
+  titleInput.value = '';
 }
 
 function generateId() {
