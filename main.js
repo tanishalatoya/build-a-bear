@@ -55,15 +55,17 @@ function createSavedOutfitCard(outfitInfo) {
   console.log(outfitInfo);
   saveButton.disabled = true;
   titleInput.value = "";
+  saveButton.setAttribute("id", "save-button")
 }
 
 function toggleSaveBtn() {
   console.log('anything');
   if (!titleInput.value || titleInput.value === "Name this outfit") {
     saveButton.disabled = true;
+
   } else {
     saveButton.disabled = false;
-    saveButton.classList.add('save-button-test');
+    saveButton.removeAttribute("id")
   }
 }
 
