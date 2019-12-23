@@ -41,29 +41,16 @@ function saveOutfit() {
   return savedOutfit;
 }
 
-//function to create a card
-//pull in the hard coded card in via innerHTML/javascript
-
 function createSavedOutfitCard(outfitInfo) {
   var savedOutfitsContainer = document.querySelector('.saved-outfits-container');
   var outfitInfo = saveOutfit();
-  console.log(outfitInfo);
 
   savedOutfitsContainer.innerHTML +=
     `<div>
-      <p></p>
-      <button type="button" name="button"><img src="./assets/cancel.svg" alt="close icon"></button>
+      <p>${outfitInfo.title}</p>
+      <button id=${outfitInfo.id}type="button" name="button"><img src="./assets/cancel.svg" alt="close icon"></button>
     </div>`
-
 }
-
-
-
-
-
-
-
-
 
 function generateId() {
   return Math.random().toString(36).substr(2, 9);
