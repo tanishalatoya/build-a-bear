@@ -2,18 +2,24 @@ var saveButton = document.querySelector('#save-button');
 var backgroundContainer = document.querySelector('.backgrounds');
 var allClothingOptions = document.querySelector('.all-clothing-options');
 var allGarments = [];
+var hatImages = document.querySelectorAll('.hat-img');
 var hatContainer = document.querySelector('.hats');
-
+var accessoriesImages = document.querySelectorAll('.accessories-img')
 var accessoriesContainer = document.querySelector('.accessories');
+var clothesImages = document.querySelectorAll('.clothes-img');
+var clothesContainer = document.querySelector('.clothes');
+var backgroundImages = document.querySelectorAll('.background-img');
+var backgroundsContainer = document.querySelector('.backgrounds');
 
 window.addEventListener('load', createNewOutfitInstance);
 saveButton.addEventListener('click', saveOutfit);
 backgroundContainer.addEventListener('click', selectBackground);
 allClothingOptions.addEventListener('click', selectGarment);
 allClothingOptions.addEventListener('click', clickedGarmentButtons);
-// allClothingOptions.addEventListener('click', dressBear);
-hatContainer.addEventListener('click', addHatGarments);
-accessoriesContainer.addEventListener('click', addAccessoriesGarments);
+hatContainer.addEventListener('click', toggleHats);
+accessoriesContainer.addEventListener('click', toggleAccessories);
+clothesContainer.addEventListener('click', toggleClothes);
+backgroundsContainer.addEventListener('click', toggleBackgrounds);
 
 
 function createNewOutfitInstance() {
@@ -75,22 +81,98 @@ function clickedGarmentButtons() {
 }
 
 function addHatGarments() {
+  removeHats()
   var allHats = document.querySelector(`#${event.target.dataset.id}`);
-  var hatImages = document.querySelectorAll('.hat-img')
+  allHats.classList.toggle('hidden');
+  event.target.dataset.active = 'true';
+}
 
+function removeHats() {
   for (var i = 0; i < hatImages.length; i++) {
     hatImages[i].classList.add('hidden');
-    allHats.classList.remove('hidden');
+    hatImages[i].classList.add('false');
+  }
+}
+
+function toggleHats() {
+  if (event.target.dataset.active === 'true') {
+    removeHats()
+    event.target.dataset.active = 'false'
+  } else {
+    removeHats()
+    addHatGarments();
   }
 }
 
 
 function addAccessoriesGarments() {
+  removeAccessories()
   var allAccessories = document.querySelector(`#${event.target.dataset.id}`);
-  var accessoriesImages = document.querySelectorAll('.accessories-img');
+  allAccessories.classList.toggle('hidden');
+  event.target.dataset.active = 'true';
+}
 
+function removeAccessories() {
   for (var i = 0; i < accessoriesImages.length; i++) {
     accessoriesImages[i].classList.add('hidden');
-    allAccessories.classList.remove('hidden');
+    accessoriesImages[i].classList.add('false');
+  }
+}
+
+function toggleAccessories() {
+  if (event.target.dataset.active === 'true') {
+    removeAccessories()
+    event.target.dataset.active = 'false'
+  } else {
+    removeAccessories()
+    addAccessoriesGarments();
+  }
+}
+
+function addClothesGarments() {
+  removeClothes()
+  var allClothes = document.querySelector(`#${event.target.dataset.id}`);
+  allClothes.classList.toggle('hidden');
+  event.target.dataset.active = 'true';
+}
+
+function removeClothes() {
+  for (var i = 0; i < clothesImages.length; i++) {
+    clothesImages[i].classList.add('hidden');
+    clothesImages[i].classList.add('false');
+  }
+}
+
+function toggleClothes() {
+  if (event.target.dataset.active === 'true') {
+    removeClothes()
+    event.target.dataset.active = 'false'
+  } else {
+    removeClothes()
+    addClothesGarments();
+  }
+}
+
+function addBackgrounds() {
+  removeBackgrouds()
+  var allBackgrounds = document.querySelector(`#${event.target.dataset.id}`);
+  allBackgrounds.classList.toggle('hidden');
+  event.target.dataset.active = 'true';
+}
+
+function removeBackgrouds() {
+  for (var i = 0; i < backgroundImages.length; i++) {
+    backgroundImages[i].classList.add('hidden');
+    backgroundImages[i].classList.add('false');
+  }
+}
+
+function toggleBackgrounds() {
+  if (event.target.dataset.active === 'true') {
+    removeBackgrouds()
+    event.target.dataset.active = 'false'
+  } else {
+    removeBackgrouds()
+    addBackgrounds();
   }
 }
