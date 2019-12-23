@@ -23,6 +23,7 @@ clothesContainer.addEventListener('click', clickedClothesButtons);
 clothesContainer.addEventListener('click', toggleClothes);
 backgroundsContainer.addEventListener('click', clickedBackgroundsButtons);
 backgroundsContainer.addEventListener('click', toggleBackgrounds);
+saveButton.addEventListener('click', createSavedOutfitCard);
 
 
 
@@ -37,14 +38,16 @@ function saveOutfit() {
   var garments = JSON.parse(localStorage.getItem('selectGarments'));
   var savedOutfit = new Outfit(titleInput.value, background , uniqueId, garments)
 
-  createSavedOutfitCard();
+  return savedOutfit;
 }
 
 //function to create a card
 //pull in the hard coded card in via innerHTML/javascript
 
-function createSavedOutfitCard() {
+function createSavedOutfitCard(outfitInfo) {
   var savedOutfitsContainer = document.querySelector('.saved-outfits-container');
+  var outfitInfo = saveOutfit();
+  console.log(outfitInfo);
 
   savedOutfitsContainer.innerHTML +=
     `<div>
