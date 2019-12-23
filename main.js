@@ -26,11 +26,13 @@ clothesContainer.addEventListener('click', toggleClothes);
 backgroundsContainer.addEventListener('click', clickedBackgroundsButtons);
 backgroundsContainer.addEventListener('click', toggleBackgrounds);
 saveButton.addEventListener('click', createSavedOutfitCard);
+titleInput.addEventListener('input', toggleSaveBtn);
 
 
 
 function createNewOutfitInstance() {
   var outfit = new Outfit('none', 'none', 1);
+  toggleSaveBtn()
 }
 
 function saveOutfit() {
@@ -38,7 +40,7 @@ function saveOutfit() {
   var uniqueId = generateId()
   var garments = JSON.parse(localStorage.getItem('selectGarments'));
   var savedOutfit = new Outfit(titleInput.value, background , uniqueId, garments)
-
+  // enableSaveBtn()
   return savedOutfit;
 }
 
@@ -50,8 +52,25 @@ function createSavedOutfitCard(outfitInfo) {
       <p>${outfitInfo.title}</p>
       <button id=${outfitInfo.id}type="button" name="button"><img src="./assets/cancel.svg" alt="close icon"></button>
     </div>`
-  titleInput.value = '';
+  console.log(outfitInfo);
+  saveButton.disabled = true;
+  titleInput.value = "";
 }
+
+function toggleSaveBtn() {
+  console.log('anything');
+  if (!titleInput.value || titleInput.value === "Name this outfit") {
+    saveButton.disabled = true;
+  } else {
+    saveButton.disabled = false;
+    saveButton.classList.add('save-button-test');
+  }
+}
+
+// function enableSaveBtn() {
+//   saveButton.disabled = false;
+//   saveButton.classList.add('save-button-test');
+// }
 
 function generateId() {
   return Math.random().toString(36).substr(2, 9);
