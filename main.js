@@ -36,7 +36,31 @@ function saveOutfit() {
   var uniqueId = generateId()
   var garments = JSON.parse(localStorage.getItem('selectGarments'));
   var savedOutfit = new Outfit(titleInput.value, background , uniqueId, garments)
+
+  createSavedOutfitCard();
 }
+
+//function to create a card
+//pull in the hard coded card in via innerHTML/javascript
+
+function createSavedOutfitCard() {
+  var savedOutfitsContainer = document.querySelector('.saved-outfits-container');
+
+  savedOutfitsContainer.innerHTML +=
+    `<div>
+      <p></p>
+      <button type="button" name="button"><img src="./assets/cancel.svg" alt="close icon"></button>
+    </div>`
+
+}
+
+
+
+
+
+
+
+
 
 function generateId() {
   return Math.random().toString(36).substr(2, 9);
