@@ -15,11 +15,15 @@ window.addEventListener('load', createNewOutfitInstance);
 saveButton.addEventListener('click', saveOutfit);
 backgroundContainer.addEventListener('click', selectBackground);
 allClothingOptions.addEventListener('click', selectGarment);
-allClothingOptions.addEventListener('click', clickedGarmentButtons);
+hatContainer.addEventListener('click', clickedHatButtons);
 hatContainer.addEventListener('click', toggleHats);
+accessoriesContainer.addEventListener('click', clickedAccessoriesButtons);
 accessoriesContainer.addEventListener('click', toggleAccessories);
+clothesContainer.addEventListener('click', clickedClothesButtons);
 clothesContainer.addEventListener('click', toggleClothes);
+backgroundsContainer.addEventListener('click', clickedBackgroundsButtons);
 backgroundsContainer.addEventListener('click', toggleBackgrounds);
+
 
 
 function createNewOutfitInstance() {
@@ -68,14 +72,40 @@ function selectGarment(event) {
   localStorage.setItem('selectGarments', stringifiedGarments);
 }
 
-function clickedGarmentButtons() {
-  var buttons = document.querySelectorAll('button');
+function clickedHatButtons() {
+  var buttons = document.querySelectorAll('.hats > button');
   for (var i = 0; i < buttons.length; i++) {
     buttons[i].classList.remove('button-clicked');
     if (buttons[i] === event.target) {
     event.target.classList.toggle('button-clicked');
+    }
+  }
+}
 
-      // event.target.classList.toggle('hidden');
+function clickedClothesButtons() {
+  var buttons = document.querySelectorAll('.clothes > button');
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].classList.remove('button-clicked');
+    if (buttons[i] === event.target) {
+    event.target.classList.toggle('button-clicked');
+    }
+  }
+}
+function clickedAccessoriesButtons() {
+  var buttons = document.querySelectorAll('.accessories > button');
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].classList.remove('button-clicked');
+    if (buttons[i] === event.target) {
+    event.target.classList.toggle('button-clicked');
+    }
+  }
+}
+function clickedBackgroundsButtons() {
+  var buttons = document.querySelectorAll('.backgrounds > button');
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].classList.remove('button-clicked');
+    if (buttons[i] === event.target) {
+    event.target.classList.toggle('button-clicked');
     }
   }
 }
