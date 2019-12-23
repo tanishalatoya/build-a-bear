@@ -6,6 +6,10 @@ var hatImages = document.querySelectorAll('.hat-img');
 var hatContainer = document.querySelector('.hats');
 var accessoriesImages = document.querySelectorAll('.accessories-img')
 var accessoriesContainer = document.querySelector('.accessories');
+var clothesImages = document.querySelectorAll('.clothes-img');
+var clothesContainer = document.querySelector('.clothes');
+var backgroundImages = document.querySelectorAll('.background-img');
+var backgroundsContainer = document.querySelector('.backgrounds');
 
 window.addEventListener('load', createNewOutfitInstance);
 saveButton.addEventListener('click', saveOutfit);
@@ -14,6 +18,8 @@ allClothingOptions.addEventListener('click', selectGarment);
 allClothingOptions.addEventListener('click', clickedGarmentButtons);
 hatContainer.addEventListener('click', toggleHats);
 accessoriesContainer.addEventListener('click', toggleAccessories);
+clothesContainer.addEventListener('click', toggleClothes);
+backgroundsContainer.addEventListener('click', toggleBackgrounds);
 
 
 function createNewOutfitInstance() {
@@ -123,17 +129,50 @@ function toggleAccessories() {
   }
 }
 
+function addClothesGarments() {
+  removeClothes()
+  var allClothes = document.querySelector(`#${event.target.dataset.id}`);
+  allClothes.classList.toggle('hidden');
+  event.target.dataset.active = 'true';
+}
 
+function removeClothes() {
+  for (var i = 0; i < clothesImages.length; i++) {
+    clothesImages[i].classList.add('hidden');
+    clothesImages[i].classList.add('false');
+  }
+}
 
+function toggleClothes() {
+  if (event.target.dataset.active === 'true') {
+    removeClothes()
+    event.target.dataset.active = 'false'
+  } else {
+    removeClothes()
+    addClothesGarments();
+  }
+}
 
+function addBackgrounds() {
+  removeBackgrouds()
+  var allBackgrounds = document.querySelector(`#${event.target.dataset.id}`);
+  allBackgrounds.classList.toggle('hidden');
+  event.target.dataset.active = 'true';
+}
 
+function removeBackgrouds() {
+  for (var i = 0; i < backgroundImages.length; i++) {
+    backgroundImages[i].classList.add('hidden');
+    backgroundImages[i].classList.add('false');
+  }
+}
 
-
-
-// function addAccessoriesGarments() {
-//     var allAccessories = document.querySelector(`#${event.target.dataset.id}`);
-//     for (var i = 0; i < accessoriesImages.length; i++) {
-//       accessoriesImages[i].classList.add('hidden')
-//       allAccessories.classList.remove('hidden');
-//     }
-// }
+function toggleBackgrounds() {
+  if (event.target.dataset.active === 'true') {
+    removeBackgrouds()
+    event.target.dataset.active = 'false'
+  } else {
+    removeBackgrouds()
+    addBackgrounds();
+  }
+}
