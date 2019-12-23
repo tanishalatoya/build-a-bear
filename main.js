@@ -23,6 +23,7 @@ clothesContainer.addEventListener('click', clickedClothesButtons);
 clothesContainer.addEventListener('click', toggleClothes);
 backgroundsContainer.addEventListener('click', clickedBackgroundsButtons);
 backgroundsContainer.addEventListener('click', toggleBackgrounds);
+saveButton.addEventListener('click', createSavedOutfitCard);
 
 
 
@@ -36,6 +37,19 @@ function saveOutfit() {
   var uniqueId = generateId()
   var garments = JSON.parse(localStorage.getItem('selectGarments'));
   var savedOutfit = new Outfit(titleInput.value, background , uniqueId, garments)
+
+  return savedOutfit;
+}
+
+function createSavedOutfitCard(outfitInfo) {
+  var savedOutfitsContainer = document.querySelector('.saved-outfits-container');
+  var outfitInfo = saveOutfit();
+
+  savedOutfitsContainer.innerHTML +=
+    `<div>
+      <p>${outfitInfo.title}</p>
+      <button id=${outfitInfo.id}type="button" name="button"><img src="./assets/cancel.svg" alt="close icon"></button>
+    </div>`
 }
 
 function generateId() {
