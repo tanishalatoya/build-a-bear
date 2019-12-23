@@ -62,7 +62,7 @@ button:not(first-child) {
 }
 
 .clothing-option button:hover,
-/* .save-button-test:hover */
+.save-button-test:hover
  {
   background-color: #485447;
   transform: scale(0.95);
@@ -93,7 +93,7 @@ h2 {
   width: 60%;
 }
 .bear-container div button {
-  background: #9CB2AD;
+  background: #5B7F77;
   color: white;
   font-family: 'Didact Gothic', sans-serif;
   width: 30%;
@@ -104,11 +104,6 @@ h2 {
   border: 0;
   border-radius: 4px;
   box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.3);
-  cursor: not-allowed;
-}
-
-.save-button-test {
-  background: #5B7F77;
   cursor: pointer;
 }
 
@@ -173,6 +168,11 @@ h2 {
   background-color: #485447 !important;
   transform: scale(0.95) !important;
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3) !important;
+}
+
+#save-button {
+  background: #9CB2AD;
+  cursor: not-allowed;
 }
 
 .all-images {
