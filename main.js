@@ -55,7 +55,8 @@ function createSavedOutfitCard(outfitInfo) {
   console.log(outfitInfo);
   saveButton.disabled = true;
   titleInput.value = "";
-  saveButton.setAttribute("id", "save-button")
+  saveButton.setAttribute("id", "save-button");
+  undressBear();
 }
 
 function toggleSaveBtn() {
@@ -69,10 +70,6 @@ function toggleSaveBtn() {
   }
 }
 
-// function enableSaveBtn() {
-//   saveButton.disabled = false;
-//   saveButton.classList.add('save-button-test');
-// }
 
 function generateId() {
   return Math.random().toString(36).substr(2, 9);
@@ -240,5 +237,12 @@ function toggleBackgrounds() {
   } else {
     removeBackgrouds()
     addBackgrounds();
+  }
+}
+
+function undressBear() {
+  var allImages = document.querySelectorAll('img')
+  for (var i = 1; i < allImages.length; i++) {
+    allImages[i].classList.add('hidden');
   }
 }
