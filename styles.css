@@ -74,14 +74,14 @@ h2 {
 }
 
 .bear-container {
-    margin: auto;
+    margin: 5% 15%;
 }
 
 .bear-container div {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* margin-top: 3%; */
+  margin-top: 5%;
 }
 
 .bear-container div input {
@@ -249,8 +249,8 @@ h2 {
 }
 
 #bear-img {
-  margin-top: -2%;
-  height: 500px;
+  margin-top: 10%;
+  height: 430px;
   position: relative;
   z-index: 2;
 }
