@@ -181,17 +181,18 @@ h2 {
 
 #crown-img {
   position: absolute;
-  width: 20%;
-  right: 30%;
-  transform: rotate(20deg);
+  width: 18%;
+  right: 36%;
+  top: 11%;
+  transform: rotate(16deg);
   z-index: 3;
 }
 
 #hairbow-img {
   position: absolute;
-  width: 20%;
-  right: 35%;
-  top: 4%;
+  width: 18%;
+  right: 40%;
+  top: 15%;
   transform: rotate(20deg);
   z-index: 3;
 }
@@ -233,23 +234,25 @@ h2 {
 
 #sunhat-img {
   position: absolute;
-  width: 40%;
-  right: 23%;
-  bottom: 70%;
+  width: 38%;
+  right: 28%;
+  bottom: 60%;
+  transform: rotate(-10deg);
   z-index: 3;
 }
 
 #tophat-img {
   position: absolute;
-  width: 34%;
-  right: 27%;
-  bottom: 85%;
+  width: 30%;
+  right: 30%;
+  bottom: 75%;
   transform: rotate(15deg);
   z-index: 3;
 }
 
 #bear-img {
   margin-top: 10%;
+  margin-left: 5%;
   height: 430px;
   position: relative;
   z-index: 2;
@@ -274,9 +277,9 @@ h2 {
 }
 
 #clothing-vest {
-  height: 29em;
-  right: 5%;
-  top: 2%;
+  height: 26em;
+  right: 12%;
+  top: 12%;
   transform: rotate(deg);
   position: absolute;
   z-index: 3;
@@ -286,12 +289,25 @@ h2 {
 }
 
 #clothing-bowtie {
-  height: 5em;
-  top: 38%;
-  right: 40%;
+  height: 4em;
+  top: 45%;
+  right: 45%;
   transform: rotate(15deg);
   position: absolute;
   z-index: 3;
+}
+
+
+
+
+#clothing-dress {
+  height: 24em;
+  top: 14%;
+  left: 9%;
+  transform: rotate(5deg);
+  position: absolute;
+  z-index: 3;
+}
 
   /* height: 5em;
   width: auto;
@@ -300,23 +316,5 @@ h2 {
   margin-bottom: 39%;
   transform: rotate(15deg);
   position: relative;
-  z-index: 3; */
-}
-
-#clothing-dress {
-  height: 26em;
-  right: 11%;
-  top: 7%;
-  transform: rotate(5deg);
-  position: absolute;
-  z-index: 3;
-
-  /* height: 30em;
-  width: auto;
-  margin-top: -100%;
-  margin-left: 2%;
-  margin-bottom: 4%;
-  transform: skewX(10deg);
-  position: absolute;
   z-index: 3; */
 }
