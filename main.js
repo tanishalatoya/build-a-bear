@@ -11,9 +11,10 @@ var clothesContainer = document.querySelector('.clothes');
 var backgroundImages = document.querySelectorAll('.background-img');
 var backgroundsContainer = document.querySelector('.backgrounds');
 var titleInput = document.querySelector('input');
+var allOutfitCards = [];
 
 
-window.addEventListener('load', createNewOutfitInstance);
+// window.addEventListener('load', createNewOutfitInstance);
 saveButton.addEventListener('click', saveOutfit);
 backgroundContainer.addEventListener('click', selectBackground);
 allClothingOptions.addEventListener('click', selectGarment);
@@ -40,19 +41,20 @@ function saveOutfit() {
   var uniqueId = generateId()
   var garments = JSON.parse(localStorage.getItem('selectGarments'));
   var savedOutfit = new Outfit(titleInput.value, background , uniqueId, garments)
-  // enableSaveBtn()
   return savedOutfit;
 }
 
-function createSavedOutfitCard(outfitInfo) {
+function createSavedOutfitCard() {
   var savedOutfitsContainer = document.querySelector('.saved-outfits-container');
   var outfitInfo = saveOutfit();
+  console.log(outfitInfo);
   savedOutfitsContainer.innerHTML +=
     `<div>
       <p>${outfitInfo.title}</p>
       <button id=${outfitInfo.id}type="button" name="button"><img src="./assets/cancel.svg" alt="close icon"></button>
     </div>`
-  console.log(outfitInfo);
+    allOutfitCards.push(outfitInfo)
+    console.log(allOutfitCards);
   saveButton.disabled = true;
   titleInput.value = "";
   saveButton.setAttribute("id", "save-button");
@@ -60,7 +62,7 @@ function createSavedOutfitCard(outfitInfo) {
 }
 
 function toggleSaveBtn() {
-  console.log('anything');
+  // console.log('anything');
   if (!titleInput.value || titleInput.value === "Name this outfit") {
     saveButton.disabled = true;
 
@@ -246,3 +248,7 @@ function undressBear() {
     allImages[i].classList.add('hidden');
   }
 }
+
+// one place where all the cards are which will be an array where the cards are pushed after they are created.
+// use that array to push into local localStorage
+// use createNewOutfitInstance function to pull out fo storage
