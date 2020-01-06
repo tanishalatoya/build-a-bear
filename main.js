@@ -11,7 +11,7 @@ var clothesContainer = document.querySelector('.clothes');
 var backgroundImages = document.querySelectorAll('.background-img');
 var backgroundsContainer = document.querySelector('.backgrounds');
 var titleInput = document.querySelector('input');
-var allOutfitCards = [];
+var allOutfitCards;
 
 
 window.addEventListener('load', createNewOutfitInstance);
@@ -26,7 +26,6 @@ clothesContainer.addEventListener('click', clickedClothesButtons);
 clothesContainer.addEventListener('click', toggleClothes);
 backgroundsContainer.addEventListener('click', clickedBackgroundsButtons);
 backgroundsContainer.addEventListener('click', toggleBackgrounds);
-saveButton.addEventListener('click', createSavedOutfitCard);
 titleInput.addEventListener('input', toggleSaveBtn);
 
 
@@ -34,18 +33,8 @@ titleInput.addEventListener('input', toggleSaveBtn);
 // more then one item we will have to iterate over those items (loop) and then make them the object again.
 // create a card(the same one) using the info from storage
 function createNewOutfitInstance() {
-  // console.log('working');
-  var whatever = JSON.parse(localStorage.getItem("allOutfitCards"));
-  console.log({whatever});
-  // var getOutfitFromStorage = JSON.parse(localStorage.getItem("allOutfitCards"));
-  // if (whatever) {
-  //   for (var i = 0; i < whatever.length; i++) {
-      // console.log(whatever[i]);
-      // var outfit = new Outfit(getOutfitFromStorage[i].title, getOutfitFromStorage[i].background, getOutfitFromStorage[i].garments, getOutfitFromStorage[i].id);
-      // console.log(outfit);
-  //   }
-  // }
-  // console.log(whatever);
+  allOutfitCards = [];
+
   toggleSaveBtn()
 }
 
@@ -53,8 +42,11 @@ function saveOutfit() {
   var background = localStorage.getItem('selectedBackground')
   var uniqueId = generateId()
   var garments = JSON.parse(localStorage.getItem('selectGarments'));
-  var savedOutfit = new Outfit(titleInput.value, background , uniqueId, garments)
-  return savedOutfit;
+  var savedOutfit = new Outfit(titleInput.value, background , uniqueId, garments);
+  createSavedOutfitCard(savedOutfit);
+  allOutfitCards.push(savedOutfit);
+  var stringifiedOutfitCards = JSON.stringify(allOutfitCards);
+  localStorage.setItem("savedOutfit", stringifiedOutfitCards);
 }
 
 function clearBackgroundAndGarments() {
@@ -62,21 +54,17 @@ function clearBackgroundAndGarments() {
   localStorage.removeItem("selectGarments")
 }
 
-function createSavedOutfitCard() {
+function createSavedOutfitCard(outfitInfo) {
   var savedOutfitsContainer = document.querySelector('.saved-outfits-container');
-  var outfitInfo = saveOutfit();
   // console.log(outfitInfo);
   savedOutfitsContainer.innerHTML +=
     `<div>
       <p>${outfitInfo.title}</p>
       <button id=${outfitInfo.id}type="button" name="button"><img src="./assets/cancel.svg" alt="close icon"></button>
     </div>`
-    allOutfitCards.push(outfitInfo)
+
     console.log(allOutfitCards);
-    var stringifiedSavedOutfits = JSON.stringify(allOutfitCards);
-    localStorage.setItem("allOutfitCards", allOutfitCards);
-    console.log(stringifiedSavedOutfits);
-    // console.log(localStorage.getItem("allOutfitCards"));
+
   clearBackgroundAndGarments()
   saveButton.disabled = true;
   titleInput.value = "";
