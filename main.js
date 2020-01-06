@@ -11,6 +11,7 @@ var clothesContainer = document.querySelector('.clothes');
 var backgroundImages = document.querySelectorAll('.background-img');
 var backgroundsContainer = document.querySelector('.backgrounds');
 var titleInput = document.querySelector('input');
+var allOutfitCards;
 
 
 window.addEventListener('load', createNewOutfitInstance);
@@ -25,13 +26,17 @@ clothesContainer.addEventListener('click', clickedClothesButtons);
 clothesContainer.addEventListener('click', toggleClothes);
 backgroundsContainer.addEventListener('click', clickedBackgroundsButtons);
 backgroundsContainer.addEventListener('click', toggleBackgrounds);
-saveButton.addEventListener('click', createSavedOutfitCard);
 titleInput.addEventListener('input', toggleSaveBtn);
 
-
-
 function createNewOutfitInstance() {
-  var outfit = new Outfit('none', 'none', 1);
+  allOutfitCards = [];
+  var storedOutfitCards = JSON.parse(localStorage.getItem("savedOutfit"));
+  for (var i = 0; i < storedOutfitCards.length; i++) {
+    var retrievedOutfit = new Outfit(storedOutfitCards[i].title, storedOutfitCards[i].background , storedOutfitCards[i].id, storedOutfitCards[i].garments);
+    createSavedOutfitCard(retrievedOutfit);
+    allOutfitCards.push(retrievedOutfit);
+    console.log(allOutfitCards);
+  }
   toggleSaveBtn()
 }
 
@@ -39,20 +44,26 @@ function saveOutfit() {
   var background = localStorage.getItem('selectedBackground')
   var uniqueId = generateId()
   var garments = JSON.parse(localStorage.getItem('selectGarments'));
-  var savedOutfit = new Outfit(titleInput.value, background , uniqueId, garments)
-  // enableSaveBtn()
-  return savedOutfit;
+  var savedOutfit = new Outfit(titleInput.value, background , uniqueId, garments);
+  createSavedOutfitCard(savedOutfit);
+  allOutfitCards.push(savedOutfit);
+  var stringifiedOutfitCards = JSON.stringify(allOutfitCards);
+  localStorage.setItem("savedOutfit", stringifiedOutfitCards);
+}
+
+function clearBackgroundAndGarments() {
+  localStorage.removeItem("selectedBackground")
+  localStorage.removeItem("selectGarments")
 }
 
 function createSavedOutfitCard(outfitInfo) {
   var savedOutfitsContainer = document.querySelector('.saved-outfits-container');
-  var outfitInfo = saveOutfit();
   savedOutfitsContainer.innerHTML +=
     `<div>
       <p>${outfitInfo.title}</p>
       <button id=${outfitInfo.id}type="button" name="button"><img src="./assets/cancel.svg" alt="close icon"></button>
     </div>`
-  console.log(outfitInfo);
+  clearBackgroundAndGarments()
   saveButton.disabled = true;
   titleInput.value = "";
   saveButton.setAttribute("id", "save-button");
@@ -60,16 +71,13 @@ function createSavedOutfitCard(outfitInfo) {
 }
 
 function toggleSaveBtn() {
-  console.log('anything');
   if (!titleInput.value || titleInput.value === "Name this outfit") {
     saveButton.disabled = true;
-
   } else {
     saveButton.disabled = false;
     saveButton.removeAttribute("id")
   }
 }
-
 
 function generateId() {
   return Math.random().toString(36).substr(2, 9);
@@ -167,7 +175,6 @@ function toggleHats() {
   }
 }
 
-
 function addAccessoriesGarments() {
   removeAccessories()
   var allAccessories = document.querySelector(`#${event.target.dataset.id}`);
@@ -242,7 +249,7 @@ function toggleBackgrounds() {
 
 function undressBear() {
   var allImages = document.querySelectorAll('img')
-  for (var i = 1; i < allImages.length; i++) {
+  for (var i = 1; i < 15; i++) {
     allImages[i].classList.add('hidden');
   }
 }
