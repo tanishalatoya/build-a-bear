@@ -255,7 +255,7 @@ h2 {
   margin-top: 10%;
   margin-left: 5%;
   height: 430px;
-  position: relative;
+  /* position: relative; */
   z-index: 2;
 }
 
