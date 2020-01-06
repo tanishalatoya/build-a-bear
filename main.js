@@ -28,10 +28,6 @@ backgroundsContainer.addEventListener('click', clickedBackgroundsButtons);
 backgroundsContainer.addEventListener('click', toggleBackgrounds);
 titleInput.addEventListener('input', toggleSaveBtn);
 
-
-// if theres something in storage we are going to pull items out of localStorage
-// more then one item we will have to iterate over those items (loop) and then make them the object again.
-// create a card(the same one) using the info from storage
 function createNewOutfitInstance() {
   allOutfitCards = [];
   var storedOutfitCards = JSON.parse(localStorage.getItem("savedOutfit"));
@@ -62,15 +58,11 @@ function clearBackgroundAndGarments() {
 
 function createSavedOutfitCard(outfitInfo) {
   var savedOutfitsContainer = document.querySelector('.saved-outfits-container');
-  // console.log(outfitInfo);
   savedOutfitsContainer.innerHTML +=
     `<div>
       <p>${outfitInfo.title}</p>
       <button id=${outfitInfo.id}type="button" name="button"><img src="./assets/cancel.svg" alt="close icon"></button>
     </div>`
-
-    console.log(allOutfitCards);
-
   clearBackgroundAndGarments()
   saveButton.disabled = true;
   titleInput.value = "";
@@ -79,16 +71,13 @@ function createSavedOutfitCard(outfitInfo) {
 }
 
 function toggleSaveBtn() {
-  // console.log('anything');
   if (!titleInput.value || titleInput.value === "Name this outfit") {
     saveButton.disabled = true;
-
   } else {
     saveButton.disabled = false;
     saveButton.removeAttribute("id")
   }
 }
-
 
 function generateId() {
   return Math.random().toString(36).substr(2, 9);
@@ -186,7 +175,6 @@ function toggleHats() {
   }
 }
 
-
 function addAccessoriesGarments() {
   removeAccessories()
   var allAccessories = document.querySelector(`#${event.target.dataset.id}`);
@@ -261,11 +249,7 @@ function toggleBackgrounds() {
 
 function undressBear() {
   var allImages = document.querySelectorAll('img')
-  for (var i = 1; i < allImages.length; i++) {
+  for (var i = 1; i < 15; i++) {
     allImages[i].classList.add('hidden');
   }
 }
-
-// one place where all the cards are which will be an array where the cards are pushed after they are created.
-// use that array to push into local localStorage
-// use createNewOutfitInstance function to pull out fo storage
