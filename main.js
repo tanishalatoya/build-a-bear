@@ -34,7 +34,13 @@ titleInput.addEventListener('input', toggleSaveBtn);
 // create a card(the same one) using the info from storage
 function createNewOutfitInstance() {
   allOutfitCards = [];
-
+  var storedOutfitCards = JSON.parse(localStorage.getItem("savedOutfit"));
+  for (var i = 0; i < storedOutfitCards.length; i++) {
+    var retrievedOutfit = new Outfit(storedOutfitCards[i].title, storedOutfitCards[i].background , storedOutfitCards[i].id, storedOutfitCards[i].garments);
+    createSavedOutfitCard(retrievedOutfit);
+    allOutfitCards.push(retrievedOutfit);
+    console.log(allOutfitCards);
+  }
   toggleSaveBtn()
 }
 
