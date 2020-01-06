@@ -14,7 +14,7 @@ var titleInput = document.querySelector('input');
 var allOutfitCards = [];
 
 
-// window.addEventListener('load', createNewOutfitInstance);
+window.addEventListener('load', createNewOutfitInstance);
 saveButton.addEventListener('click', saveOutfit);
 backgroundContainer.addEventListener('click', selectBackground);
 allClothingOptions.addEventListener('click', selectGarment);
@@ -30,9 +30,22 @@ saveButton.addEventListener('click', createSavedOutfitCard);
 titleInput.addEventListener('input', toggleSaveBtn);
 
 
-
+// if theres something in storage we are going to pull items out of localStorage
+// more then one item we will have to iterate over those items (loop) and then make them the object again.
+// create a card(the same one) using the info from storage
 function createNewOutfitInstance() {
-  var outfit = new Outfit('none', 'none', 1);
+  // console.log('working');
+  var whatever = JSON.parse(localStorage.getItem("allOutfitCards"));
+  console.log({whatever});
+  // var getOutfitFromStorage = JSON.parse(localStorage.getItem("allOutfitCards"));
+  // if (whatever) {
+  //   for (var i = 0; i < whatever.length; i++) {
+      // console.log(whatever[i]);
+      // var outfit = new Outfit(getOutfitFromStorage[i].title, getOutfitFromStorage[i].background, getOutfitFromStorage[i].garments, getOutfitFromStorage[i].id);
+      // console.log(outfit);
+  //   }
+  // }
+  // console.log(whatever);
   toggleSaveBtn()
 }
 
@@ -44,10 +57,15 @@ function saveOutfit() {
   return savedOutfit;
 }
 
+function clearBackgroundAndGarments() {
+  localStorage.removeItem("selectedBackground")
+  localStorage.removeItem("selectGarments")
+}
+
 function createSavedOutfitCard() {
   var savedOutfitsContainer = document.querySelector('.saved-outfits-container');
   var outfitInfo = saveOutfit();
-  console.log(outfitInfo);
+  // console.log(outfitInfo);
   savedOutfitsContainer.innerHTML +=
     `<div>
       <p>${outfitInfo.title}</p>
@@ -55,6 +73,11 @@ function createSavedOutfitCard() {
     </div>`
     allOutfitCards.push(outfitInfo)
     console.log(allOutfitCards);
+    var stringifiedSavedOutfits = JSON.stringify(allOutfitCards);
+    localStorage.setItem("allOutfitCards", allOutfitCards);
+    console.log(stringifiedSavedOutfits);
+    // console.log(localStorage.getItem("allOutfitCards"));
+  clearBackgroundAndGarments()
   saveButton.disabled = true;
   titleInput.value = "";
   saveButton.setAttribute("id", "save-button");
