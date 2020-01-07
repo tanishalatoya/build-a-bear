@@ -182,7 +182,7 @@ h2 {
 #crown-img {
   position: absolute;
   width: 18%;
-  right: 36%;
+  right: 39%;
   top: 11%;
   transform: rotate(16deg);
   z-index: 3;
@@ -200,7 +200,7 @@ h2 {
 #necklace-img {
   position: absolute;
   width: 20%;
-  left: 36%;
+  left: 33%;
   top: 48%;
   transform: rotate(10deg);
   z-index: 3;
@@ -217,8 +217,8 @@ h2 {
 
 #spacehelmet-img {
   position: absolute;
-  width: 38%;
-  right: 30.5%;
+  width: 36%;
+  right: 34%;
   top: 10%;
   transform: rotate(14deg);
   z-index: 3;
@@ -227,7 +227,7 @@ h2 {
 #sunglasses-img {
   position: absolute;
   width: 25%;
-  right: 37%;
+  right: 40%;
   top: 30%;
   transform: rotate(18deg);
   z-index: 3;
@@ -236,8 +236,8 @@ h2 {
 #sunhat-img {
   position: absolute;
   width: 38%;
-  right: 28%;
-  bottom: 60%;
+  right: 31%;
+  bottom: 57%;
   transform: rotate(-10deg);
   z-index: 3;
 }
@@ -245,8 +245,8 @@ h2 {
 #tophat-img {
   position: absolute;
   width: 30%;
-  right: 30%;
-  bottom: 75%;
+  right: 34%;
+  bottom: 74%;
   transform: rotate(15deg);
   z-index: 3;
 }
@@ -254,8 +254,8 @@ h2 {
 #bear-img {
   margin-top: 10%;
   margin-left: 5%;
-  height: 430px;
-  /* position: relative; */
+  width: 80%;
+  position: relative;
   z-index: 2;
 }
 
@@ -284,28 +284,22 @@ h2 {
   transform: rotate(deg);
   position: absolute;
   z-index: 3;
-
-  /* margin-top: -100%;
-  margin-bottom: 2%; */
 }
 
 #clothing-bowtie {
   height: 4em;
   top: 45%;
-  right: 45%;
+  right: 48%;
   transform: rotate(15deg);
   position: absolute;
   z-index: 3;
 }
 
-
-
-
 #clothing-dress {
-  height: 24em;
-  top: 14%;
-  left: 9%;
-  transform: rotate(5deg);
+  height: 26em;
+  right: 14%;
+  top: 10%;
+  transform: rotate(deg);
   position: absolute;
   z-index: 3;
 }
