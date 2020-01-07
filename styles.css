@@ -28,7 +28,6 @@ h1 {
   color: #FCF9EA
 }
 
-
 .clothing-options-container {
   grid-area: clothing;
   padding-left: 5%;
@@ -62,8 +61,7 @@ button:not(first-child) {
 }
 
 .clothing-option button:hover,
-.save-button-test:hover
- {
+.save-button-test:hover {
   background-color: #485447;
   transform: scale(0.95);
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
@@ -92,6 +90,7 @@ h2 {
   margin: auto;
   width: 60%;
 }
+
 .bear-container div button {
   background: #5B7F77;
   color: white;
@@ -107,7 +106,6 @@ h2 {
   cursor: pointer;
 }
 
-
 .saved-outfits-container h2 {
   text-align: center;
   margin-top: 5%;
@@ -116,8 +114,8 @@ h2 {
 .saved-outfits-container h2 {
   margin-bottom: 10%;
 }
-.saved-outfits-container div {
 
+.saved-outfits-container div {
   height: 10%;
   width: 80%;
   margin: auto;
@@ -134,7 +132,6 @@ h2 {
 .saved-outfits-container div p {
   margin-top: 8%;
   margin-left: 5%;
-
 }
 
 .saved-outfits-container div button {
@@ -146,8 +143,6 @@ h2 {
   padding-left: 5%;
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
 }
-
-
 
 .saved-outfits-container div button img {
   width: 40%;
@@ -267,14 +262,6 @@ h2 {
   position: absolute;
   left: 2%;
   z-index: 1;
-
-  /* height:40em;
-  width: 40em;
-  margin-top: -66%;
-  margin-bottom: 3%;
-  margin-left: 5.5%;
-  position: relative;
-  z-index: 1; */
 }
 
 #clothing-vest {
@@ -303,12 +290,3 @@ h2 {
   position: absolute;
   z-index: 3;
 }
-
-  /* height: 5em;
-  width: auto;
-  margin-left: 30%;
-  margin-top: -100%;
-  margin-bottom: 39%;
-  transform: rotate(15deg);
-  position: relative;
-  z-index: 3; */
