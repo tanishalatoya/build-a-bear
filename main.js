@@ -29,6 +29,7 @@ backgroundsContainer.addEventListener('click', clickedBackgroundsButtons);
 backgroundsContainer.addEventListener('click', toggleBackgrounds);
 titleInput.addEventListener('input', toggleSaveBtn);
 savedOutfitsContainer.addEventListener('click', removeOutfitCard);
+savedOutfitsContainer.addEventListener('click', redressBear);
 
 function createNewOutfitInstance() {
   allOutfitCards = [];
@@ -60,9 +61,9 @@ function clearBackgroundAndGarments() {
 
 function createSavedOutfitCard(outfitInfo) {
   savedOutfitsContainer.innerHTML +=
-    `<div>
+    `<div id="${outfitInfo.id}">
       <p>${outfitInfo.title}</p>
-      <button id="${outfitInfo.id}" type="button" name="button"><img data-id="${outfitInfo.id}" src="./assets/cancel.svg" alt="close icon"></button>
+      <button type="button" name="button"><img data-id="${outfitInfo.id}" src="./assets/cancel.svg" alt="close icon"></button>
     </div>`
   clearBackgroundAndGarments()
   saveButton.disabled = true;
@@ -258,6 +259,7 @@ function undressBear() {
 function removeOutfitCard(event) {
 
   for (var i = 0; i < allOutfitCards.length; i++) {
+    // console.log(allOutfitCards[i].background);
     if (event.target.dataset.id === allOutfitCards[i].id) {
       allOutfitCards.splice(i, 1);
       event.target.parentElement.parentElement.remove();
@@ -266,5 +268,14 @@ function removeOutfitCard(event) {
 
   var updatedStringifiedOutfitCards = JSON.stringify(allOutfitCards);
   localStorage.setItem("savedOutfit", updatedStringifiedOutfitCards);
+}
 
+function redressBear() {
+  for (var i = 0; i < allOutfitCards.length; i++) {
+    if (allOutfitCards[i].id === event.target.id) {
+      removeHats()
+      var readdHat = document.getElementById(`${allOutfitCards[i].garments[0]}-img`)
+      readdHat.classList.toggle('hidden')
+    }
+  }
 }
