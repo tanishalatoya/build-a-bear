@@ -67,7 +67,7 @@ function createSavedOutfitCard(outfitInfo) {
   clearBackgroundAndGarments()
   saveButton.disabled = true;
   titleInput.value = "";
-  saveButton.setAttribute("id", "save-button");
+  // saveButton.setAttribute("id", "save-button");
   undressBear();
 }
 
@@ -76,7 +76,7 @@ function toggleSaveBtn() {
     saveButton.disabled = true;
   } else {
     saveButton.disabled = false;
-    saveButton.removeAttribute("id")
+    // saveButton.removeAttribute("id")
   }
 }
 
