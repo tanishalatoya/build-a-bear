@@ -296,11 +296,13 @@ function redressBear() {
 
 function reapplyBackground() {
   for (var i = 0; i < allOutfitCards.length; i++) {
-    if (allOutfitCards[i].id === event.target.id) {
-      removeBackgrouds()
-
-      var readdBackground = document.getElementById(`${allOutfitCards[i].background}-img`);
-      readdBackground.classList.toggle('hidden');
+    if (allOutfitCards[i].id === event.target.parentElement.id || allOutfitCards[i].id === event.target.id) {
+      if (allOutfitCards[i].background) {
+        console.log(allOutfitCards[i].background);
+        removeBackgrouds()
+        var readdBackground = document.getElementById(`${allOutfitCards[i].background}-img`);
+        readdBackground.classList.toggle('hidden');
+      }
     }
   }
 }
