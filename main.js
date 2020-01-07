@@ -30,6 +30,7 @@ backgroundsContainer.addEventListener('click', toggleBackgrounds);
 titleInput.addEventListener('input', toggleSaveBtn);
 savedOutfitsContainer.addEventListener('click', removeOutfitCard);
 savedOutfitsContainer.addEventListener('click', redressBear);
+savedOutfitsContainer.addEventListener('click', reapplyBackground);
 
 function createNewOutfitInstance() {
   allOutfitCards = [];
@@ -274,8 +275,26 @@ function redressBear() {
   for (var i = 0; i < allOutfitCards.length; i++) {
     if (allOutfitCards[i].id === event.target.id) {
       removeHats()
+      removeClothes();
+      removeAccessories();
+
       var readdHat = document.getElementById(`${allOutfitCards[i].garments[0]}-img`)
+      var readdClothes = document.getElementById(`${allOutfitCards[i].garments[1]}-img`);
+      var readdAccessories = document.getElementById(`${allOutfitCards[i].garments[2]}-img`);
       readdHat.classList.toggle('hidden')
+      readdClothes.classList.toggle('hidden');
+      readdAccessories.classList.toggle('hidden');
+    }
+  }
+}
+
+function reapplyBackground() {
+  for (var i = 0; i < allOutfitCards.length; i++) {
+    if (allOutfitCards[i].id === event.target.id) {
+      removeBackgrouds()
+
+      var readdBackground = document.getElementById(`${allOutfitCards[i].background}-img`);
+      readdBackground.classList.toggle('hidden');
     }
   }
 }
