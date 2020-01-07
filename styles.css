@@ -8,32 +8,31 @@ body {
 }
 
 main {
+  background-color: #FCF9EA;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
-  grid-template-areas: 'clothing bear outfits';
   grid-template-rows: 90vh;
-  background-color: #FCF9EA;
+  grid-template-areas: 'clothing bear outfits';
 }
 
 header {
   background-color: #5B7F77;
-  /* height: 10vh; */
-  text-align: center;
   font-size: 1.7em;
+  text-align: center;
 }
 
 h1 {
+  color: #FCF9EA
   font-family: 'Bowlby One SC', cursive;
   padding-top: .5%;
-  color: #FCF9EA
 }
 
 .clothing-options-container {
-  grid-area: clothing;
-  padding-left: 5%;
   display: flex;
   flex-direction: column;
+  grid-area: clothing;
   justify-content: space-around;
+  padding-left: 5%;
 }
 
 .clothing-option {
@@ -41,30 +40,30 @@ h1 {
 }
 
 .clothing-option div {
-  margin-top: 5%;
   display: flex;
   flex-wrap: wrap;
+  margin-top: 5%;
 }
 
 button:not(first-child) {
-  font-family: 'Didact Gothic', sans-serif;
-  width: 30%;
-  padding: 2% 0;
-  font-size: 1em;
-  margin: 1.5%;
   background-color: #5B7F77;
-  color: white;
   border-radius: 4px;
   border: 0;
   box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.3);
+  color: white;
   cursor: pointer;
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 1em;
+  margin: 1.5%;
+  padding: 2% 0;
+  width: 30%;
 }
 
 .clothing-option button:hover,
 .save-button-test:hover {
   background-color: #485447;
-  transform: scale(0.95);
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+  transform: scale(0.95);
 }
 
 h2 {
@@ -72,7 +71,7 @@ h2 {
 }
 
 .bear-container {
-    margin: 5% 15%;
+  margin: 5% 15%;
 }
 
 .bear-container div {
@@ -85,30 +84,30 @@ h2 {
 .bear-container div input {
   font-family: 'Didact Gothic', sans-serif;
   font-size: 1em;
-  padding: 2% 0;
-  padding-left: 1%;
   margin: auto;
+  padding-left: 1%;
+  padding: 2% 0;
   width: 60%;
 }
 
 .bear-container div button {
   background: #5B7F77;
-  color: white;
-  font-family: 'Didact Gothic', sans-serif;
-  width: 30%;
-  margin: auto;
-  margin-top: 3%;
-  font-size: 1.2em;
-  padding: 2% 0;
-  border: 0;
   border-radius: 4px;
+  border: 0;
   box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.3);
+  color: white;
   cursor: pointer;
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 1.2em;
+  margin-top: 3%;
+  margin: auto;
+  padding: 2% 0;
+  width: 30%;
 }
 
 .saved-outfits-container h2 {
-  text-align: center;
   margin-top: 5%;
+  text-align: center;
 }
 
 .saved-outfits-container h2 {
@@ -116,38 +115,38 @@ h2 {
 }
 
 .saved-outfits-container div {
-  height: 10%;
-  width: 80%;
-  margin: auto;
-  margin-top: 5%;
-  font-size: 1.5em;
-  display: flex;
-  justify-content: space-between;
   background: #e2bba9;
-  color: white;
-  box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.3);
   border-radius: 4px;
+  box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.3);
+  color: white;
+  display: flex;
+  font-size: 1.5em;
+  height: 10%;
+  justify-content: space-between;
+  margin-top: 5%;
+  margin: auto;
+  width: 80%;
 }
 
 .saved-outfits-container div p {
-  margin-top: 8%;
   margin-left: 5%;
+  margin-top: 8%;
 }
 
 .saved-outfits-container div button {
   background: #e2bba9;
-  height: 50%;
-  width: 20%;
-  margin-top: 5%;
   border: 0;
-  padding-left: 5%;
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+  height: 50%;
+  margin-top: 5%;
+  padding-left: 5%;
+  width: 20%;
 }
 
 .saved-outfits-container div button img {
-  width: 40%;
   height: auto;
   margin-top: -10%;
+  width: 40%;
 }
 
 .all-clothing-options {
@@ -161,8 +160,8 @@ h2 {
 
 .button-clicked {
   background-color: #485447 !important;
-  transform: scale(0.95) !important;
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3) !important;
+  transform: scale(0.95) !important;
 }
 
 #save-button {
@@ -176,81 +175,81 @@ h2 {
 
 #crown-img {
   position: absolute;
-  width: 18%;
-  right: 39%;
-  top: 11%;
+    right: 39%;
+    top: 11%;
   transform: rotate(16deg);
+  width: 18%;
   z-index: 3;
 }
 
 #hairbow-img {
   position: absolute;
-  width: 18%;
-  right: 40%;
-  top: 15%;
+    right: 40%;
+    top: 15%;
   transform: rotate(20deg);
+  width: 18%;
   z-index: 3;
 }
 
 #necklace-img {
   position: absolute;
-  width: 20%;
-  left: 33%;
-  top: 48%;
+    left: 33%;
+    top: 48%;
   transform: rotate(10deg);
+  width: 20%;
   z-index: 3;
 }
 
 #smartwatch-img {
   position: absolute;
-  width: 9%;
-  right: 72%;
-  top: 41%;
+    right: 72%;
+    top: 41%;
   transform: rotate(60deg);
+  width: 9%;
   z-index: 3;
 }
 
 #spacehelmet-img {
   position: absolute;
-  width: 36%;
-  right: 34%;
-  top: 10%;
+    right: 34%;
+    top: 10%;
   transform: rotate(14deg);
+  width: 36%;
   z-index: 3;
 }
 
 #sunglasses-img {
   position: absolute;
-  width: 25%;
-  right: 40%;
-  top: 30%;
+    right: 40%;
+    top: 30%;
   transform: rotate(18deg);
+  width: 25%;
   z-index: 3;
 }
 
 #sunhat-img {
   position: absolute;
-  width: 38%;
-  right: 31%;
-  bottom: 57%;
+    right: 31%;
+    bottom: 57%;
   transform: rotate(-10deg);
+  width: 38%;
   z-index: 3;
 }
 
 #tophat-img {
   position: absolute;
-  width: 30%;
-  right: 34%;
-  bottom: 74%;
+    bottom: 74%;
+    right: 34%;
   transform: rotate(15deg);
+  width: 30%;
   z-index: 3;
 }
 
 #bear-img {
-  margin-top: 10%;
   margin-left: 5%;
-  width: 80%;
+  margin-top: 10%;
   position: relative;
+  width: 80%;
   z-index: 2;
 }
 
@@ -258,35 +257,35 @@ h2 {
 #hearts-background,
 #space-background,
 #park-background {
-  width: 90%;
   position: absolute;
-  left: 2%;
+    left: 2%;
+  width: 90%;
   z-index: 1;
 }
 
 #clothing-vest {
-  width: 81%;
-  right: 15%;
-  top: 11%;
-  transform: rotate(deg);
   position: absolute;
+    right: 15%;
+    top: 11%;
+  transform: rotate(deg);
+  width: 81%;
   z-index: 3;
 }
 
 #clothing-bowtie {
-  width: 18%;
-  top: 45%;
-  right: 48%;
-  transform: rotate(15deg);
   position: absolute;
+    right: 48%;
+    top: 45%;
+  transform: rotate(15deg);
+  width: 18%;
   z-index: 3;
 }
 
 #clothing-dress {
-  width: 75%;
-  right: 20%;
-  top: 15%;
-  transform: rotate(5deg);
   position: absolute;
+    right: 20%;
+    top: 15%;
+  transform: rotate(5deg);
+  width: 75%;
   z-index: 3;
 }
