@@ -262,11 +262,10 @@ function undressBear() {
 
 function removeOutfitCard(event) {
   // console.log(event);
-
-
   for (var i = 0; i < allOutfitCards.length; i++) {
     if (event.target.dataset.id === allOutfitCards[i].id) {
       allOutfitCards.splice(i, 1);
+      event.target.parentElement.parentElement.remove();
     }
   }
 
