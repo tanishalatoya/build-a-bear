@@ -263,7 +263,7 @@ h2 {
 #hearts-background,
 #space-background,
 #park-background {
-  height: 30em;
+  width: 90%;
   position: absolute;
   left: 2%;
   z-index: 1;
@@ -278,16 +278,16 @@ h2 {
 }
 
 #clothing-vest {
-  height: 26em;
-  right: 12%;
-  top: 12%;
+  width: 81%;
+  right: 15%;
+  top: 11%;
   transform: rotate(deg);
   position: absolute;
   z-index: 3;
 }
 
 #clothing-bowtie {
-  height: 4em;
+  width: 18%;
   top: 45%;
   right: 48%;
   transform: rotate(15deg);
@@ -296,10 +296,10 @@ h2 {
 }
 
 #clothing-dress {
-  height: 26em;
-  right: 14%;
-  top: 10%;
-  transform: rotate(deg);
+  width: 75%;
+  right: 20%;
+  top: 15%;
+  transform: rotate(5deg);
   position: absolute;
   z-index: 3;
 }
