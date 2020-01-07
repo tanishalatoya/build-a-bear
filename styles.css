@@ -1,3 +1,4 @@
+/* GENERAL STYLING */
 * {
   margin: 0;
   padding: 0;
@@ -15,6 +16,7 @@ main {
   grid-template-areas: 'clothing bear outfits';
 }
 
+/* HEADER AREA */
 header {
   background-color: #5B7F77;
   font-size: 1.7em;
@@ -27,6 +29,7 @@ h1 {
   padding-top: .5%;
 }
 
+/* BUTTONS FOR CLOTING SELECTION */
 .clothing-options-container {
   display: flex;
   flex-direction: column;
@@ -70,6 +73,7 @@ h2 {
   color: #8c6c4f;
 }
 
+/* CONTAINER DISPLAYING THE BEAR */
 .bear-container {
   margin: 5% 15%;
 }
@@ -105,6 +109,7 @@ h2 {
   width: 30%;
 }
 
+/* CONTAINER CONTAINING SAVED OUTFIT CARDS */
 .saved-outfits-container h2 {
   margin-top: 5%;
   text-align: center;
@@ -154,10 +159,12 @@ h2 {
   padding-top: 5%;
 }
 
+/* HIDES ITEM */
 .hidden {
   display: none;
 }
 
+/* SHOWS WHICH BUTTON IS SELECTED */
 .button-clicked {
   background-color: #485447 !important;
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3) !important;
@@ -169,6 +176,7 @@ h2 {
   cursor: not-allowed;
 }
 
+/* OPTIONS FOR CLOTHING AND BACKGROUND FOR THE BEAR */
 .all-images {
   position: relative;
 }
