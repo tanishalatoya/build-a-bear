@@ -273,17 +273,17 @@ h2 {
   z-index: 2;
 }
 
-#beach-background,
-#hearts-background,
-#space-background,
-#park-background {
+#beach-img,
+#hearts-img,
+#space-img,
+#park-img {
   position: absolute;
     left: 2%;
   width: 90%;
   z-index: 1;
 }
 
-#clothing-vest {
+#vest-img {
   position: absolute;
     right: 15%;
     top: 11%;
@@ -292,7 +292,7 @@ h2 {
   z-index: 3;
 }
 
-#clothing-bowtie {
+#bowtie-img {
   position: absolute;
     right: 48%;
     top: 45%;
@@ -301,7 +301,7 @@ h2 {
   z-index: 3;
 }
 
-#clothing-dress {
+#dress-img {
   position: absolute;
     right: 20%;
     top: 15%;

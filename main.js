@@ -273,28 +273,36 @@ function removeOutfitCard(event) {
 
 function redressBear() {
   for (var i = 0; i < allOutfitCards.length; i++) {
-    if (allOutfitCards[i].id === event.target.id) {
-      removeHats()
-      removeClothes();
-      removeAccessories();
 
-      var readdHat = document.getElementById(`${allOutfitCards[i].garments[0]}-img`)
-      var readdClothes = document.getElementById(`${allOutfitCards[i].garments[1]}-img`);
-      var readdAccessories = document.getElementById(`${allOutfitCards[i].garments[2]}-img`);
-      readdHat.classList.toggle('hidden')
-      readdClothes.classList.toggle('hidden');
-      readdAccessories.classList.toggle('hidden');
+    if (allOutfitCards[i].id === event.target.parentElement.id || allOutfitCards[i].id === event.target.id) {
+      if (allOutfitCards[i].garments[0]) {
+        removeHats();
+        var readdHat = document.getElementById(`${allOutfitCards[i].garments[0]}-img`);
+        readdHat.classList.toggle('hidden');
+      }
+      if (allOutfitCards[i].garments[1]) {
+        removeClothes();
+        var readdClothes = document.getElementById(`${allOutfitCards[i].garments[1]}-img`);
+        readdClothes.classList.toggle('hidden');
+      }
+      if (allOutfitCards[i].garments[2]) {
+        removeAccessories();
+        var readdAccessories = document.getElementById(`${allOutfitCards[i].garments[2]}-img`);
+        readdAccessories.classList.toggle('hidden');
+      }
     }
   }
 }
 
 function reapplyBackground() {
   for (var i = 0; i < allOutfitCards.length; i++) {
-    if (allOutfitCards[i].id === event.target.id) {
-      removeBackgrouds()
-
-      var readdBackground = document.getElementById(`${allOutfitCards[i].background}-img`);
-      readdBackground.classList.toggle('hidden');
+    if (allOutfitCards[i].id === event.target.parentElement.id || allOutfitCards[i].id === event.target.id) {
+      if (allOutfitCards[i].background) {
+        console.log(allOutfitCards[i].background);
+        removeBackgrouds()
+        var readdBackground = document.getElementById(`${allOutfitCards[i].background}-img`);
+        readdBackground.classList.toggle('hidden');
+      }
     }
   }
 }
