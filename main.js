@@ -275,11 +275,14 @@ function redressBear() {
     if (allOutfitCards[i].id === event.target.id) {
       removeHats()
       removeClothes();
+      removeAccessories();
+
       var readdHat = document.getElementById(`${allOutfitCards[i].garments[0]}-img`)
       var readdClothes = document.getElementById(`${allOutfitCards[i].garments[1]}-img`);
-
+      var readdAccessories = document.getElementById(`${allOutfitCards[i].garments[2]}-img`);
       readdHat.classList.toggle('hidden')
       readdClothes.classList.toggle('hidden');
+      readdAccessories.classList.toggle('hidden');
     }
   }
 }
