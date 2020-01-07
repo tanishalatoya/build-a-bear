@@ -255,13 +255,8 @@ function undressBear() {
   }
 }
 
-//the card needs to be removed from two places: the array, and the DOM
-//we need to figure out which card was clicked on -- event bubbling
-//we need to splice it from the array
-//resend it to local storage
-
 function removeOutfitCard(event) {
-  // console.log(event);
+
   for (var i = 0; i < allOutfitCards.length; i++) {
     if (event.target.dataset.id === allOutfitCards[i].id) {
       allOutfitCards.splice(i, 1);
@@ -269,6 +264,7 @@ function removeOutfitCard(event) {
     }
   }
 
-  console.log(allOutfitCards);
+  var updatedStringifiedOutfitCards = JSON.stringify(allOutfitCards);
+  localStorage.setItem("savedOutfit", updatedStringifiedOutfitCards);
 
 }
