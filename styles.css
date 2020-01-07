@@ -17,13 +17,13 @@ main {
 
 header {
   background-color: #5B7F77;
-  height: 10vh;
+  /* height: 10vh; */
   text-align: center;
-  font-size: 2em;
+  font-size: 1.7em;
 }
 
 h1 {
-  font-family: 'Francois One', sans-serif;
+  font-family: 'Bowlby One SC', cursive;
   padding-top: .5%;
   color: #FCF9EA
 }
