@@ -274,8 +274,12 @@ function redressBear() {
   for (var i = 0; i < allOutfitCards.length; i++) {
     if (allOutfitCards[i].id === event.target.id) {
       removeHats()
+      removeClothes();
       var readdHat = document.getElementById(`${allOutfitCards[i].garments[0]}-img`)
+      var readdClothes = document.getElementById(`${allOutfitCards[i].garments[1]}-img`);
+
       readdHat.classList.toggle('hidden')
+      readdClothes.classList.toggle('hidden');
     }
   }
 }
