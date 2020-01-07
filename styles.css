@@ -144,16 +144,19 @@ h2 {
   background: #e2bba9;
   border: 0;
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+  cursor: auto;
   height: 50%;
+  margin-right: 5%;
   margin-top: 5%;
-  padding-left: 5%;
-  width: 20%;
+  padding-left: 3%;
+  width: 8%;
 }
 
 .saved-outfits-container div button img {
+  cursor: pointer;
   height: auto;
   margin-top: -10%;
-  width: 40%;
+  width: 100%;
 }
 
 .all-clothing-options {
@@ -173,9 +176,15 @@ h2 {
   transform: scale(0.95) !important;
 }
 
-#save-button {
+#save-button:disabled {
   background: #9CB2AD;
   cursor: not-allowed;
+  margin-top: 2%;
+}
+
+#save-button {
+  background: #5B7F77;
+  cursor: pointer;
   margin-top: 2%;
 }
 
