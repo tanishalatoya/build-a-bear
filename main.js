@@ -11,6 +11,7 @@ var clothesContainer = document.querySelector('.clothes');
 var backgroundImages = document.querySelectorAll('.background-img');
 var backgroundsContainer = document.querySelector('.backgrounds');
 var titleInput = document.querySelector('input');
+var savedOutfitsContainer = document.querySelector('.saved-outfits-container');
 var allOutfitCards;
 
 
@@ -27,6 +28,7 @@ clothesContainer.addEventListener('click', toggleClothes);
 backgroundsContainer.addEventListener('click', clickedBackgroundsButtons);
 backgroundsContainer.addEventListener('click', toggleBackgrounds);
 titleInput.addEventListener('input', toggleSaveBtn);
+savedOutfitsContainer.addEventListener('click', removeOutfitCard);
 
 function createNewOutfitInstance() {
   allOutfitCards = [];
@@ -57,11 +59,10 @@ function clearBackgroundAndGarments() {
 }
 
 function createSavedOutfitCard(outfitInfo) {
-  var savedOutfitsContainer = document.querySelector('.saved-outfits-container');
   savedOutfitsContainer.innerHTML +=
     `<div>
       <p>${outfitInfo.title}</p>
-      <button id=${outfitInfo.id}type="button" name="button"><img src="./assets/cancel.svg" alt="close icon"></button>
+      <button id="${outfitInfo.id}" type="button" name="button"><img data-id="${outfitInfo.id}" src="./assets/cancel.svg" alt="close icon"></button>
     </div>`
   clearBackgroundAndGarments()
   saveButton.disabled = true;
@@ -252,4 +253,18 @@ function undressBear() {
   for (var i = 1; i < 15; i++) {
     allImages[i].classList.add('hidden');
   }
+}
+
+function removeOutfitCard(event) {
+
+  for (var i = 0; i < allOutfitCards.length; i++) {
+    if (event.target.dataset.id === allOutfitCards[i].id) {
+      allOutfitCards.splice(i, 1);
+      event.target.parentElement.parentElement.remove();
+    }
+  }
+
+  var updatedStringifiedOutfitCards = JSON.stringify(allOutfitCards);
+  localStorage.setItem("savedOutfit", updatedStringifiedOutfitCards);
+
 }
