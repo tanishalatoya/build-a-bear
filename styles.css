@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: 'Didact Gothic', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 main {
@@ -24,8 +24,9 @@ header {
 }
 
 h1 {
-  color: #FCF9EA
+  color: #FCF9EA;
   font-family: 'Bowlby One SC', cursive;
+  letter-spacing: .05em;
   padding-top: .5%;
 }
 
@@ -71,6 +72,7 @@ button:not(first-child) {
 
 h2 {
   color: #8c6c4f;
+  font-weight: bold;
 }
 
 /* CONTAINER DISPLAYING THE BEAR */
@@ -128,8 +130,8 @@ h2 {
   font-size: 1.5em;
   height: 10%;
   justify-content: space-between;
-  margin-top: 5%;
   margin: auto;
+  margin-top: 5%;
   width: 80%;
 }
 
@@ -174,6 +176,7 @@ h2 {
 #save-button {
   background: #9CB2AD;
   cursor: not-allowed;
+  margin-top: 2%;
 }
 
 /* OPTIONS FOR CLOTHING AND BACKGROUND FOR THE BEAR */
