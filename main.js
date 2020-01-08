@@ -273,29 +273,35 @@ function removeOutfitCard(event) {
 
 function redressBear() {
   undressBear();
+  unclickGarmentButtons();
 
   for (var i = 0; i < allOutfitCards.length; i++) {
-    // allOutfitCards[4];
     if (allOutfitCards[i].id === event.target.parentElement.id || allOutfitCards[i].id === event.target.id) {
       console.log(allOutfitCards[i].garments[0]);
       if (allOutfitCards[i].garments[0]) {
         removeHats();
         var readdHat = document.getElementById(`${allOutfitCards[i].garments[0]}-img`);
+        var hatButton = document.getElementById(`${allOutfitCards[i].garments[0]}`);
         readdHat.classList.toggle('hidden');
+        hatButton.classList.toggle('button-clicked');
       } else {
         removeHats();
       }
       if (allOutfitCards[i].garments[1]) {
         removeClothes();
         var readdClothes = document.getElementById(`${allOutfitCards[i].garments[1]}-img`);
+        var clothesButton = document.getElementById(`${allOutfitCards[i].garments[1]}`);
         readdClothes.classList.toggle('hidden');
+        clothesButton.classList.toggle('button-clicked');
       } else {
         removeClothes();
       }
       if (allOutfitCards[i].garments[2]) {
         removeAccessories();
         var readdAccessories = document.getElementById(`${allOutfitCards[i].garments[2]}-img`);
+        var accessoriesButton = document.getElementById(`${allOutfitCards[i].garments[2]}`);
         readdAccessories.classList.toggle('hidden');
+        accessoriesButton.classList.toggle('button-clicked');
       } else {
         removeAccessories();
       }
@@ -303,17 +309,42 @@ function redressBear() {
   }
 }
 
+function unclickGarmentButtons() {
+  var hatButtons = document.querySelectorAll('.hats > button');
+  var clothesButtons = document.querySelectorAll('.clothes > button');
+  var accessoriesButtons = document.querySelectorAll('.accessories > button');
+    for (var i = 0; i < hatButtons.length; i++) {
+      hatButtons[i].classList.remove('button-clicked');
+    };
+    for (var i = 0; i < clothesButtons.length; i++) {
+      clothesButtons[i].classList.remove('button-clicked');
+    };
+    for (var i = 0; i < accessoriesButtons.length; i++) {
+      accessoriesButtons[i].classList.remove('button-clicked');
+    };
+}
+
 function reapplyBackground() {
+  unclickBackgroundButtons()
   for (var i = 0; i < allOutfitCards.length; i++) {
     if (allOutfitCards[i].id === event.target.parentElement.id || allOutfitCards[i].id === event.target.id) {
       if (allOutfitCards[i].background) {
         console.log(allOutfitCards[i].background);
         removeBackgrouds()
         var readdBackground = document.getElementById(`${allOutfitCards[i].background}-img`);
+        var backgroundButton = document.getElementById(`${allOutfitCards[i].background}`);
         readdBackground.classList.toggle('hidden');
+        backgroundButton.classList.toggle('button-clicked');
       } else {
         removeBackgrouds();
       }
     }
+  }
+}
+
+function unclickBackgroundButtons() {
+  var backgroundButtons = document.querySelectorAll('.backgrounds > button');
+  for (var i = 0; i < backgroundButtons.length; i++) {
+    backgroundButtons[i].classList.remove('button-clicked');
   }
 }
