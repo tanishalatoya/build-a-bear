@@ -15,26 +15,27 @@ _After a user has dressed the bear prior to saving the current dressed up bear_
 
 _After a user has saved a few outfits_
 
+![Screen Shot 2020-01-08 at 3 41 17 PM](https://user-images.githubusercontent.com/43975806/72022345-68b79400-322d-11ea-8983-0bea3b9a1a85.png)
+
 
 
 ### Things learned during this project:
-1.
-1.
-1.
-1.
-1.
-1.
-1.
+1. Better grasp of JavaScript functionality.
+1. When to use local vs. global variables.
+1. Better Git workflow.
+1. Creating functions that focus on one functionality. 
+1. Better understanding of classes and objects use.
+1. Local Storage
 
 ### Opportunities for refactor _-or-_ Items to include in future iterations:
-* **Refactor:**
+* **Refactor:** redressBear function is long because it's doing the same thing multiple times and if we were to refactor we could write smaller functions and use those as helper functions within this function.
 
-* **Refactor:**
-
-* **Refactor:**
+* **Refactor:** Next time thing about how to better utilize methods on the outfit object.
 
 * **Future iteration:** In the container containing the cards with the bear's saved outfits, a `clear all button` can be implemented to remove all the saved outfits simultaneously. This would remove the key associated with the array holding all the saved outfit cards from the browser's local storage.
 
 * **Future iteration:** In the container containing the cards with the bear's saved outfits, the cards can be prepended to display the last saved outfit first.
+
+* **Future iteration:** Add functionality so that when a user clicks on a previously saved outfit it appears on the bear and they can edit the outfit, click the save button and see that the outfit is permanently updated (including in local storage).
 
 
