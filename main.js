@@ -1,19 +1,18 @@
-var saveButton = document.querySelector('#save-button');
-var backgroundContainer = document.querySelector('.backgrounds');
-var allClothingOptions = document.querySelector('.all-clothing-options');
-var allGarments = [];
-var hatImages = document.querySelectorAll('.hat-img');
-var hatContainer = document.querySelector('.hats');
-var accessoriesImages = document.querySelectorAll('.accessories-img')
 var accessoriesContainer = document.querySelector('.accessories');
-var clothesImages = document.querySelectorAll('.clothing-img');
-var clothesContainer = document.querySelector('.clothes');
+var accessoriesImages = document.querySelectorAll('.accessories-img')
+var allClothingOptions = document.querySelector('.all-clothing-options');
+var backgroundContainer = document.querySelector('.backgrounds');
 var backgroundImages = document.querySelectorAll('.background-img');
 var backgroundsContainer = document.querySelector('.backgrounds');
-var titleInput = document.querySelector('input');
+var clothesContainer = document.querySelector('.clothes');
+var clothesImages = document.querySelectorAll('.clothing-img');
+var hatContainer = document.querySelector('.hats');
+var hatImages = document.querySelectorAll('.hat-img');
+var saveButton = document.querySelector('#save-button');
 var savedOutfitsContainer = document.querySelector('.saved-outfits-container');
+var titleInput = document.querySelector('input');
+var allGarments = [];
 var allOutfitCards;
-
 
 window.addEventListener('load', createNewOutfitInstance);
 saveButton.addEventListener('click', saveOutfit);
@@ -39,7 +38,6 @@ function createNewOutfitInstance() {
     var retrievedOutfit = new Outfit(storedOutfitCards[i].title, storedOutfitCards[i].background , storedOutfitCards[i].id, storedOutfitCards[i].garments);
     createSavedOutfitCard(retrievedOutfit);
     allOutfitCards.push(retrievedOutfit);
-    console.log(allOutfitCards);
   }
   toggleSaveBtn()
 }
@@ -66,11 +64,13 @@ function createSavedOutfitCard(outfitInfo) {
       <p>${outfitInfo.title}</p>
       <button type="button" name="button"><img data-id="${outfitInfo.id}" src="./assets/cancel.svg" alt="close icon"></button>
     </div>`
+
   clearBackgroundAndGarments()
   saveButton.disabled = true;
   titleInput.value = "";
-  // saveButton.setAttribute("id", "save-button");
   undressBear();
+  unclickGarmentButtons();
+  unclickBackgroundButtons();
 }
 
 function toggleSaveBtn() {
@@ -78,7 +78,6 @@ function toggleSaveBtn() {
     saveButton.disabled = true;
   } else {
     saveButton.disabled = false;
-    // saveButton.removeAttribute("id")
   }
 }
 
@@ -95,7 +94,6 @@ function selectGarment(event) {
   var hatButtons = document.querySelectorAll('.hats');
   var clothesButtons = document.querySelectorAll('.clothes')
   var accessoriesButtons = document.querySelectorAll('.accessories')
-
   for (var i = 0; i < hatButtons.length; i++) {
     if (event.target.parentElement.className === 'hats') {
       allGarments[0] = event.target.id
@@ -111,7 +109,6 @@ function selectGarment(event) {
       allGarments[2] = event.target.id
     }
   }
-
   var stringifiedGarments = JSON.stringify(allGarments)
   localStorage.setItem('selectGarments', stringifiedGarments);
 }
@@ -135,6 +132,7 @@ function clickedClothesButtons() {
     }
   }
 }
+
 function clickedAccessoriesButtons() {
   var buttons = document.querySelectorAll('.accessories > button');
   for (var i = 0; i < buttons.length; i++) {
@@ -144,6 +142,7 @@ function clickedAccessoriesButtons() {
     }
   }
 }
+
 function clickedBackgroundsButtons() {
   var buttons = document.querySelectorAll('.backgrounds > button');
   for (var i = 0; i < buttons.length; i++) {
@@ -258,15 +257,12 @@ function undressBear() {
 }
 
 function removeOutfitCard(event) {
-
   for (var i = 0; i < allOutfitCards.length; i++) {
-    // console.log(allOutfitCards[i].background);
     if (event.target.dataset.id === allOutfitCards[i].id) {
       allOutfitCards.splice(i, 1);
       event.target.parentElement.parentElement.remove();
     }
   }
-
   var updatedStringifiedOutfitCards = JSON.stringify(allOutfitCards);
   localStorage.setItem("savedOutfit", updatedStringifiedOutfitCards);
 }
@@ -277,7 +273,6 @@ function redressBear() {
 
   for (var i = 0; i < allOutfitCards.length; i++) {
     if (allOutfitCards[i].id === event.target.parentElement.id || allOutfitCards[i].id === event.target.id) {
-      console.log(allOutfitCards[i].garments[0]);
       if (allOutfitCards[i].garments[0]) {
         removeHats();
         var readdHat = document.getElementById(`${allOutfitCards[i].garments[0]}-img`);
@@ -330,7 +325,6 @@ function reapplyBackground() {
   for (var i = 0; i < allOutfitCards.length; i++) {
     if (allOutfitCards[i].id === event.target.parentElement.id || allOutfitCards[i].id === event.target.id) {
       if (allOutfitCards[i].background) {
-        console.log(allOutfitCards[i].background);
         removeBackgrouds()
         var readdBackground = document.getElementById(`${allOutfitCards[i].background}-img`);
         var backgroundButton = document.getElementById(`${allOutfitCards[i].background}`);
@@ -356,5 +350,4 @@ function updateInput() {
       titleInput.value = allOutfitCards[i].title
     }
   }
-
 }
