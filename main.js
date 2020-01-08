@@ -272,23 +272,32 @@ function removeOutfitCard(event) {
 }
 
 function redressBear() {
-  for (var i = 0; i < allOutfitCards.length; i++) {
+  undressBear();
 
+  for (var i = 0; i < allOutfitCards.length; i++) {
+    // allOutfitCards[4];
     if (allOutfitCards[i].id === event.target.parentElement.id || allOutfitCards[i].id === event.target.id) {
+      console.log(allOutfitCards[i].garments[0]);
       if (allOutfitCards[i].garments[0]) {
         removeHats();
         var readdHat = document.getElementById(`${allOutfitCards[i].garments[0]}-img`);
         readdHat.classList.toggle('hidden');
+      } else {
+        removeHats();
       }
       if (allOutfitCards[i].garments[1]) {
         removeClothes();
         var readdClothes = document.getElementById(`${allOutfitCards[i].garments[1]}-img`);
         readdClothes.classList.toggle('hidden');
+      } else {
+        removeClothes();
       }
       if (allOutfitCards[i].garments[2]) {
         removeAccessories();
         var readdAccessories = document.getElementById(`${allOutfitCards[i].garments[2]}-img`);
         readdAccessories.classList.toggle('hidden');
+      } else {
+        removeAccessories();
       }
     }
   }
@@ -302,6 +311,8 @@ function reapplyBackground() {
         removeBackgrouds()
         var readdBackground = document.getElementById(`${allOutfitCards[i].background}-img`);
         readdBackground.classList.toggle('hidden');
+      } else {
+        removeBackgrouds();
       }
     }
   }
