@@ -5,17 +5,4 @@ class Outfit {
     this.background = background;
     this.id = id || undefined;
   }
-
-  addGarment(attire) {
-    this.garments.push(attire)
-  }
-
-  removeGarment() {
-    // itterate over the array with a for loop and find the index of the id of the item we are trying to remove. And then remove it.
-    for (var i = 0; i < this.garments.length; i++) {
-      if(this.garments[i] === this.id) {
-        this.garments.splice(i, 1);
-      }
-    }
-  }
 }
