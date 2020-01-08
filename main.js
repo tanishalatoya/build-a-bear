@@ -306,6 +306,7 @@ function redressBear() {
         removeAccessories();
       }
     }
+    updateInput()
   }
 }
 
@@ -347,4 +348,13 @@ function unclickBackgroundButtons() {
   for (var i = 0; i < backgroundButtons.length; i++) {
     backgroundButtons[i].classList.remove('button-clicked');
   }
+}
+
+function updateInput() {
+  for (var i = 0; i < allOutfitCards.length; i++) {
+    if (allOutfitCards[i].id === event.target.parentElement.id || allOutfitCards[i].id === event.target.id) {
+      titleInput.value = allOutfitCards[i].title
+    }
+  }
+
 }
