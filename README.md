@@ -20,12 +20,11 @@ _After a user has saved a few outfits_
 
 
 ### Things learned during this project:
-1. Better grasp of JavaScript functionality.
-1. When to use local vs. global variables.
-1. Better Git workflow.
-1. Creating functions that focus on one functionality. 
-1. Better understanding of classes and objects use.
-1. Local Storage
+1. When to use local variables vs. global variables.
+1. Itermediate git workflow
+1. Creating smaller functions focused on doing one job only
+1. Using classes/objects to scope functionality
+1. Storing objects in local storage in order for items to persist on page load/reload
 
 ### Opportunities for refactor _-or-_ Items to include in future iterations:
 * **Refactor:** redressBear function is long because it's doing the same thing multiple times and if we were to refactor we could write smaller functions and use those as helper functions within this function.
@@ -36,6 +35,6 @@ _After a user has saved a few outfits_
 
 * **Future iteration:** In the container containing the cards with the bear's saved outfits, the cards can be prepended to display the last saved outfit first.
 
-* **Future iteration:** Add functionality so that when a user clicks on a previously saved outfit it appears on the bear and they can edit the outfit, click the save button and see that the outfit is permanently updated (including in local storage).
+* **Future iteration:** Add functionality so that when a user clicks on a previously saved outfit it appears on the bear _and_ the user can then edit the outfit, click the save button and see that the outfit is permanently updated (including in local storage).
 
 
